@@ -6,7 +6,12 @@ gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 #gem 'rails_12factor', group: :production
 #gem 'slim'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'#, group: :development
+group :development, :test do
+  gem 'sqlite3'#, group: :development
+end
+group :production do
+  gem 'pg'
+end
 #gem 'pg', group: :production
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
