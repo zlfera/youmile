@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
-  etag {1}
   def index
+    expires_in 10.hours
     respond_to do |format|
       format.html
     end
