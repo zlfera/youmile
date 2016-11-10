@@ -10,6 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20161110002240) do
+
+  create_table "grains", force: :cascade do |t|
+    t.string   "market_name"
+    t.string   "mark_number"
+    t.string   "year"
+    t.string   "type"
+    t.string   "grade"
+    t.string   "trade_amount"
+    t.string   "starting_price"
+    t.string   "latest_price"
+    t.string   "address"
+    t.string   "status"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
 
 end
