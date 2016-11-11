@@ -13,7 +13,7 @@ task :first do
       v1 = m
       url21 = url2 + v1.to_s
       docs21 = Nokogiri::HTML(open(url21), nil, 'utf-8')
-
+      doc21 = JSON.parse(docs21.css('p').text)
     end
   end
   
