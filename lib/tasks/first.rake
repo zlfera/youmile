@@ -9,7 +9,6 @@ task :first => :environment do
   doc.each do |i|
       v1 = i[0]
       market_name = i[1]
-      pp market_name
       url21 = "#{url2}#{v1.to_i}"
       docs21 = Nokogiri::HTML(open(url21), nil, 'utf-8')
       if docs21.text == 'null'
