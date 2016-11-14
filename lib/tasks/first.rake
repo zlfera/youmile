@@ -16,22 +16,29 @@ task :first => :environment do
       else
         doc21 = JSON.parse(docs21.text)
         v2 = doc21[0]
-        ii = doc21[3]
-        iii = ii.to_i
-        (1..iii).each do |i|
+        #ii = doc21[3]
+        #iii = ii.to_i
+        (1..5).each do |i|
           url31 = url3 + v2 + '-' + i.to_s
           docs31 = Nokogiri::HTML(open(url31), nil, 'utf-8')
-          doc31 = JSON.parse(docs31.text) 
-          doc31[0].delete_at(0)
-          doc31[0].delete_at(7)
-          doc31[0].delete_at(8)
-          doc31[0].delete_at(9)
-          doc31[0].delete_at(9)
-          d = doc31[0]
-          g = Grain.new(market_name: market_name, mark_number: d[0], year: d[1], variety: d[2], grade: d[3], trade_amount: d[4], starting_price: d[5], latest_price: d[6], address: d[7], status: d[8])
-          g.save
+          if docs31.text == 'null'
+            next
+          else
+            doc31 = JSON.parse(docs31.text)
+            doc31[0].delete_at(0)
+            doc31[0].delete_at(7)
+            doc31[0].delete_at(8)
+            doc31[0].delete_at(9)
+            doc31[0].delete_at(9)
+            d = doc31[0]
+            if d[8] == 'A'
+              next
+            elsif d[8] == 'G' or d[8] == 'C'
+              g = Grain.new(market_name: market_name, mark_number: d[0], year: d[1], variety: d[2], grade: d[3], trade_amount: d[4], starting_price: d[5], latest_price: d[6], address: d[7], status: d[8])
+              g.save
+            end
+          end
         end
       end
   end
-  
 end
