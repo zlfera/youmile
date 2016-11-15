@@ -18,7 +18,7 @@ task :first => :environment do
         v2 = doc21[0]
         #ii = doc21[3]
         #iii = ii.to_i
-        (1..5).each do |i|
+        (1..12).each do |i|
           url31 = url3 + v2 + '-' + i.to_s
           docs31 = Nokogiri::HTML(open(url31), nil, 'utf-8')
           if docs31.text == 'null'
@@ -33,7 +33,7 @@ task :first => :environment do
             d = doc31[0]
             if d[8] == 'A'
               next
-            elsif d[8] == 'G' or d[8] == 'C'
+            elsif d[8] == 'G' or d[8] == 'F'
               g = Grain.new(market_name: market_name, mark_number: d[0], year: d[1], variety: d[2], grade: d[3], trade_amount: d[4], starting_price: d[5], latest_price: d[6], address: d[7], status: d[8])
               g.save
             end
