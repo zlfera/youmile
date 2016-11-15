@@ -7,4 +7,7 @@ class HomeController < ApplicationController
       #format.html
     #end
   end
+  def grain_index
+    @gg = Grain.find 1
+  end
 end
