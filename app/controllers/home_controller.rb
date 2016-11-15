@@ -8,6 +8,6 @@ class HomeController < ApplicationController
     #end
   end
   def grain_index
-    @gg = Grain.find 1
+    @gg = Grain.all
   end
 end
