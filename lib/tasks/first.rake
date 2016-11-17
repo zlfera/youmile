@@ -16,8 +16,6 @@ task :first => :environment do
       else
         doc21 = JSON.parse(docs21.text)
         v2 = doc21[0]
-        #ii = doc21[3]
-        #iii = ii.to_i
         (1..12).each do |i|
           url31 = url3 + v2 + '-' + i.to_s
           docs31 = Nokogiri::HTML(open(url31), nil, 'utf-8')
@@ -25,16 +23,11 @@ task :first => :environment do
             next
           else
             doc31 = JSON.parse(docs31.text)
-            #doc31[0].delete_at(0)
-            #doc31[0].delete_at(7)
-            #doc31[0].delete_at(8)
-            #doc31[0].delete_at(9)
-            #doc31[0].delete_at(9)
             d = doc31[0]
             if d[11] == 'A' or d[11] == 'B'
               next
             elsif d[11] == 'G' or d[11] == 'F'
-              if d[7] == '0'
+              if d[11] == 'G'
                 d[7] = '流拍'
               end
               g = Grain.new(market_name: market_name, mark_number: d[1], year: d[2], variety: d[3], grade: d[4], trade_amount: d[5], starting_price: d[6], latest_price: d[7], address: d[9], status: d[11])
