@@ -15,18 +15,18 @@
       </tr>
     </thead>
     <tbody>
-    <% (0..(@gg.size - 1)).each do |i| %>
-      <tr>
-        <th><%= @gg[i].created_at.strftime('%Y-%m-%d') %></th>
-        <th><%= @gg[i].address %></th>
-        <th><%= @gg[i].variety %></th>
-        <th><%= @gg[i].grade %></th>
-        <th><%= @gg[i].year %></th>
-        <th><%= @gg[i].trade_amount %></th>
-        <th><%= @gg[i].starting_price %></th>
-        <th><%= @gg[i].latest_price %></th>
-      </tr>
-<% end %>
+      <% (0..(@gg.size - 1)).each do |i| %>
+        <tr>
+          <th><%= @gg[i].created_at.strftime('%Y-%m-%d') %></th>
+          <th><%= @gg[i].address %></th>
+          <th><%= @gg[i].variety %></th>
+          <th><%= @gg[i].grade %></th>
+          <th><%= @gg[i].year %></th>
+          <th><%= @gg[i].trade_amount %></th>
+          <th><%= @gg[i].starting_price %></th>
+          <th><%= @gg[i].latest_price %></th>
+        </tr>
+      <% end %>
     </tbody>
   </table>
 </div>
