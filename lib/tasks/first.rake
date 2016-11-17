@@ -25,16 +25,19 @@ task :first => :environment do
             next
           else
             doc31 = JSON.parse(docs31.text)
-            doc31[0].delete_at(0)
-            doc31[0].delete_at(7)
-            doc31[0].delete_at(8)
-            doc31[0].delete_at(9)
-            doc31[0].delete_at(9)
+            #doc31[0].delete_at(0)
+            #doc31[0].delete_at(7)
+            #doc31[0].delete_at(8)
+            #doc31[0].delete_at(9)
+            #doc31[0].delete_at(9)
             d = doc31[0]
-            if d[8] == 'A'
+            if d[11] == 'A' or d[11] == 'B'
               next
-            elsif d[8] == 'G' or d[8] == 'F'
-              g = Grain.new(market_name: market_name, mark_number: d[0], year: d[1], variety: d[2], grade: d[3], trade_amount: d[4], starting_price: d[5], latest_price: d[6], address: d[7], status: d[8])
+            elsif d[11] == 'G' or d[11] == 'F'
+              if d[7] == '0'
+                d[7] = '流拍'
+              end
+              g = Grain.new(market_name: market_name, mark_number: d[1], year: d[2], variety: d[3], grade: d[4], trade_amount: d[5], starting_price: d[6], latest_price: d[7], address: d[9], status: d[11])
               g.save
             end
           end

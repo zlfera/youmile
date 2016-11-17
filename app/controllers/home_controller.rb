@@ -8,6 +8,8 @@ class HomeController < ApplicationController
     #end
   end
   def grain_index
+    #system("rails first")
     @gg = Grain.all
+    @gg = @gg.order(created_at: :desc)
   end
 end
