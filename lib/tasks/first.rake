@@ -4,7 +4,7 @@ task :first => :environment do
   url1 = 'http://220.248.203.59:8686/rtp/data/race/getAllRaceMarketing.jsp'
   url2 = "http://220.248.203.59:8686/rtp/data/race/getRaceMeeting.jsp?id="
   url3 = "http://220.248.203.59:8686/rtp/data/race/getRaceTacheDetail.jsp?id="
-  docs = Nokogiri::HTML(open(url1), nil, 'utf-8')
+  docs = Nokogiri::HTML(open(url1, read_timeout: 10), nil, 'utf-8')
   doc = JSON.parse(docs.text)
   doc.each do |i|
       v1 = i[0]
