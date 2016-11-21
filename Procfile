@@ -1,2 +1,2 @@
-web: bundle exec puma -p $PORT
+web: rackup
 worker: bundle exec sidekiq
