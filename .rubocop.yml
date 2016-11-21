@@ -1,5 +1,3 @@
-Rails:
-  Enabled: true
 Metrics/LineLength:
   Max: 220
   AllowURI: true
@@ -12,11 +10,20 @@ Metrics/BlockLength:
   Max: 30
 Metrics/BlockNesting:
   Max: 10
+Metrics/LineLength:
+  Max: 1200
+Metrics/ClassLength:
+  Max: 1200
+Metrics/MethodLength:
+  Max: 1200
+Metrics/ModuleLength:
+  Max: 1200
 Style/LeadingCommentSpace:
   Enabled: false
 Style/SpaceBeforeComment:
   Enabled: false
 AllCops:
+  Rails:
+    Enabled: true
+    TargetRubyVersion: 2.3
   UseCache: false
-  MaxFilesInCache: 20000
-  CacheRootDirectory: ~/tmp
