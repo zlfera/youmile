@@ -17,6 +17,6 @@ Style/LeadingCommentSpace:
 Style/SpaceBeforeComment:
   Enabled: false
 AllCops:
-  UseCache: true
+  UseCache: false
   MaxFilesInCache: 20000
   CacheRootDirectory: ~/tmp
