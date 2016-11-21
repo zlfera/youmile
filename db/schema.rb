@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161114133308) do
+ActiveRecord::Schema.define(version: 20161121093507) do
 
   create_table "grains", force: :cascade do |t|
     t.string   "market_name"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20161114133308) do
     t.string   "status"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.string   "trantype"
   end
 
 end

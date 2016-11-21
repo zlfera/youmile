@@ -11,6 +11,7 @@ task :first => :environment do
       market_name = i[1]
       url21 = "#{url2}#{v1.to_i}"
       docs21 = Nokogiri::HTML(open(url21), nil, 'utf-8')
+      p docs21
       if docs21.text == 'null'
         break
       else
@@ -23,6 +24,7 @@ task :first => :environment do
             next
           else
             doc31 = JSON.parse(docs31.text)
+            p doc31
             d = doc31[0]
             if d[11] == 'A' or d[11] == 'B'
               next

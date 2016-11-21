@@ -5,6 +5,7 @@
       <tr>
         <th>交易时间</th>
         <th>交货地址</th>
+        <th>类型</th>
         <th>品种</th>
         <th>等级</th>
         <th>年份</th>
@@ -19,6 +20,7 @@
         <tr>
           <th><%= @gg[i].created_at.strftime('%Y-%m-%d') %></th>
           <th><%= @gg[i].address %></th>
+          <th><%= @gg[i].trantype %></th>
           <th><%= @gg[i].variety %></th>
           <th><%= @gg[i].grade %></th>
           <th><%= @gg[i].year %></th>

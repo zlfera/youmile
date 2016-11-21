@@ -1,0 +1,22 @@
+Rails:
+  Enabled: true
+Metrics/LineLength:
+  Max: 220
+  AllowURI: true
+  URISchemes:
+    - http
+    - https
+Documentation:
+  Enabled: false
+Metrics/BlockLength:
+  Max: 30
+Metrics/BlockNesting:
+  Max: 10
+Style/LeadingCommentSpace:
+  Enabled: false
+Style/SpaceBeforeComment:
+  Enabled: false
+AllCops:
+  UseCache: true
+  MaxFilesInCache: 20000
+  CacheRootDirectory: ~/tmp

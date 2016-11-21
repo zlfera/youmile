@@ -1,0 +1,1 @@
+[{"severity":"convention","location":{"begin_pos":52,"end_pos":384},"message":"Method has too many lines. [13/10]","cop_name":"Metrics/MethodLength","status":"unsupported"}]
