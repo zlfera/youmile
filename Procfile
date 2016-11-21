@@ -1,2 +1,2 @@
-web: rackup
-worker: bundle exec sidekiq
+web: bundle exec rackup
+web2: bundle exec sidekiq
