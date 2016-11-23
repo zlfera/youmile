@@ -23,7 +23,7 @@ Style/LeadingCommentSpace:
 Style/SpaceBeforeComment:
   Enabled: false
 AllCops:
+  UseCache: false
   Rails:
     Enabled: true
     TargetRubyVersion: 2.3
-  UseCache: false

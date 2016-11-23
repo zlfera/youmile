@@ -1,6 +1,6 @@
 class Spider2guwuJob < ActiveJob::Base
   queue_as :default
-  def perform()
+  def perform
     require 'open-uri'
     require 'json'
     url1 = 'http://220.248.203.59:8686/rtp/data/race/getAllRaceMarketing.jsp'
