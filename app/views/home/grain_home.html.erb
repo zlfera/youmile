@@ -1,0 +1,70 @@
+<div>
+  <h1>稻谷历史交易记录</h1>
+  <table class='table table-bordered'>
+    <thead>
+      <tr>
+        <th>交易时间</th>
+        <th>交货地址</th>
+        <th>类型</th>
+        <th>品种</th>
+        <th>等级</th>
+        <th>年份</th>
+        <th>交易数量</th>
+        <th>起始价格</th>
+        <th>最终价格</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <% (0..(@redis.size - 1)).each do |i| %>
+        <tr>
+          <th><%= @redis[i]['created_at'].to_time.strftime('%Y-%m-%d') %></th>
+          <th><%= @redis[i]['address'] %></th>
+          <th><%= @redis[i]['trantype'] %></th>
+          <th><%= @redis[i]['variety'] %></th>
+          <th><%= @redis[i]['grade'] %></th>
+          <th><%= @redis[i]['year'] %></th>
+          <th><%= @redis[i]['trade_amount'] %></th>
+          <th><%= @redis[i]['starting_price'] %></th>
+          <th><%= @redis[i]['latest_price'] %></th>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div id='c1'></div>
+
+<script>
+var data = [
+{month: 'Jan', temperature: 7.0},
+{month: 'Feb', temperature: 6.9},
+{month: 'Mar', temperature: 9.5},
+{month: 'Apr', temperature: 14.5},
+{month: 'May', temperature: 18.2},
+{month: 'Jun', temperature: 21.5},
+{month: 'Jul', temperature: 25.2},
+{month: 'Aug', temperature: 26.5},
+{month: 'Sep', temperature: 23.3},
+{month: 'Oct', temperature: 18.3},
+{month: 'Dec', temperature: 9.6}
+];
+
+var chart = new G2.Chart({
+  id: 'c1',
+    width: 1000,
+      height: 500
+});
+
+chart.source(data, {
+  month: {
+      alias: '年份'
+          },
+    temperature: {
+        alias: '价格'
+            }
+});
+
+chart.line().position('month*temperature').size(2);
+chart.render();
+</script>

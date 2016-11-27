@@ -14,4 +14,11 @@ class HomeController < ApplicationController
     @gg = Grain.all
     @gg = @gg.order(created_at: :desc)
   end
+
+  def grain_home
+    @redis = Redis.new(url: Rails.application.secrets.redis_url)
+    @redis = @redis.get('redis')
+    @redis = JSON.parse(@redis)
+    @redis = @redis.reverse
+  end
 end
