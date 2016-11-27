@@ -21,6 +21,6 @@ class HomeController < ApplicationController
     @redis.set('redis', g)
     @redis = @redis.get('redis')
     @redis = JSON.parse(@redis)
-    //@redis = @redis.reverse
+    #@redis = @redis.reverse
   end
 end
