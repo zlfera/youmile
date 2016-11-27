@@ -17,7 +17,7 @@
     </thead>
     <tbody>
       <% (0..(@redis.size - 1)).each do |i| %>
-        <tr class='success'>
+        <tr>
           <td><%= @redis[i]['created_at'].to_time.strftime('%Y-%m-%d') %></td>
           <td><%= @redis[i]['address'] %></td>
           <td><%= @redis[i]['trantype'] %></td>
