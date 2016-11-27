@@ -3,30 +3,30 @@
   <table class='table table-bordered table-striped'>
     <thead>
       <tr>
-        <th>交易时间</th>
-        <th>交货地址</th>
-        <th>类型</th>
-        <th>品种</th>
-        <th>等级</th>
-        <th>年份</th>
-        <th>交易数量</th>
-        <th>起始价格</th>
-        <th>最终价格</th>
+        <td>交易时间</td>
+        <td>交货地址</td>
+        <td>类型</td>
+        <td>品种</td>
+        <td>等级</td>
+        <td>年份</td>
+        <td>交易数量</td>
+        <td>起始价格</td>
+        <td>最终价格</td>
 
       </tr>
     </thead>
     <tbody>
       <% (0..(@redis.size - 1)).each do |i| %>
         <tr class='success'>
-          <th><%= @redis[i]['created_at'].to_time.strftime('%Y-%m-%d') %></th>
-          <th><%= @redis[i]['address'] %></th>
-          <th><%= @redis[i]['trantype'] %></th>
-          <th><%= @redis[i]['variety'] %></th>
-          <th><%= @redis[i]['grade'] %></th>
-          <th><%= @redis[i]['year'] %></th>
-          <th><%= @redis[i]['trade_amount'] %></th>
-          <th><%= @redis[i]['starting_price'] %></th>
-          <th><%= @redis[i]['latest_price'] %></th>
+          <td><%= @redis[i]['created_at'].to_time.strftime('%Y-%m-%d') %></td>
+          <td><%= @redis[i]['address'] %></td>
+          <td><%= @redis[i]['trantype'] %></td>
+          <td><%= @redis[i]['variety'] %></td>
+          <td><%= @redis[i]['grade'] %></td>
+          <td><%= @redis[i]['year'] %></td>
+          <td><%= @redis[i]['trade_amount'] %></td>
+          <td><%= @redis[i]['starting_price'] %></td>
+          <td><%= @redis[i]['latest_price'] %></td>
         </tr>
       <% end %>
     </tbody>
