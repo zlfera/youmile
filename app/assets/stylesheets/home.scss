@@ -7,19 +7,19 @@
 body {
   width:100%;
   margin:auto;
-  border:1px solid green;
+  border:1ex solid green;
   background-color:#CCE8CF;
 }
 nav,footer p,form {
   display:flex;
   align-items:center;
   justify-content:center;
-  margin-bottom:10px;
+  margin-bottom:10ex;
 }
 nav a {
   text-decoration:none;
-  margin-right:10px;
-  width:100px;
+  margin-right:10ex;
+  width:100ex;
 }
 a:link {color:green;}
 a:visited {color:black;}
