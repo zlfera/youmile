@@ -5,21 +5,21 @@
   box-sizing:border-box;
 }
 body {
-  width:100%;
-  margin:auto;
-  border:1ex solid green;
+  width:auto;//
+  margin:auto;//
+  border:1% solid green;//
   background-color:#CCE8CF;
 }
 nav,footer p,form {
   display:flex;
   align-items:center;
   justify-content:center;
-  margin-bottom:10ex;
+  margin-bottom:10%;//
 }
 nav a {
   text-decoration:none;
-  margin-right:10ex;
-  width:100ex;
+  margin-right:10%;//
+  width:auto; //
 }
 a:link {color:green;}
 a:visited {color:black;}
