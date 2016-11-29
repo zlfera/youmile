@@ -5,8 +5,6 @@
   box-sizing:border-box;
 }
 body {
-  width:auto;//
-  margin:auto;//
   border:1% solid green;//
   background-color:#CCE8CF;
 }
@@ -19,7 +17,7 @@ nav,footer p,form {
 nav a {
   text-decoration:none;
   margin-right:10%;//
-  width:auto; //
+  width:100%; //
 }
 a:link {color:green;}
 a:visited {color:black;}
