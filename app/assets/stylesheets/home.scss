@@ -5,10 +5,10 @@
   box-sizing:border-box;
 }
 body {
-  margin:auto;
+  margin:0 auto;//
   border:1px solid green;//1px
   background-color:#CCE8CF;
-  font-size: 35px;
+  font-size: 35px;//
 }
 nav,footer p,form {
   display:flex;
