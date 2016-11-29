@@ -5,19 +5,20 @@
   box-sizing:border-box;
 }
 body {
+  margin:auto;
   border:1px solid green;//1px
   background-color:#CCE8CF;
-  font-size: 30px;
+  font-size: 28px;
 }
 nav,footer p,form {
   display:flex;
   align-items:center;
   justify-content:center;
-  margin-bottom:2%;//10px
+  margin-bottom:3%;//10px
 }
 nav a {
   text-decoration:none;
-  margin-right:1%;//10px
+  margin-right:0.5%;//10px
   width:100%; //
 }
 a:link {color:green;}
