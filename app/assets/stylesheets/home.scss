@@ -5,7 +5,7 @@
   box-sizing:border-box;
 }
 body {
-  border:1% solid green;//1px
+  border:1px solid green;//1px
   background-color:#CCE8CF;
   font-size: 30px;
 }
@@ -13,11 +13,11 @@ nav,footer p,form {
   display:flex;
   align-items:center;
   justify-content:center;
-  margin-bottom:5px;//10px
+  margin-bottom:2%;//10px
 }
 nav a {
   text-decoration:none;
-  margin-right:5px;//10px
+  margin-right:1%;//10px
   width:100%; //
 }
 a:link {color:green;}
