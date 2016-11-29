@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   def index
     # expires_in 12.hours
-    #fresh_when(etag: Time.new.day, public: true)
+    fresh_when(etag: Time.new.day, public: true)
     # system("rails first")
     # respond_to do |format|
     # format.html
@@ -21,7 +21,7 @@ class HomeController < ApplicationController
     #@redis.set('redis', g)
     @redis = @redis.get('redis')
     @redis = JSON.parse(@redis)
-    #fresh_when(etag: @redis.size, public: true)
+    fresh_when(etag: @redis.size, public: true)
     ##@redis = @redis.reverse
   end
 end
