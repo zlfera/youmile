@@ -22,6 +22,9 @@ Style/LeadingCommentSpace:
   Enabled: false
 Style/SpaceBeforeComment:
   Enabled: false
+Lint/EndAlignment:
+  Enabled: true
+  AlignWith: variable
 AllCops:
   UseCache: false
   Rails:

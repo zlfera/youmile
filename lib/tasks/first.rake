@@ -11,7 +11,7 @@ task :first => :environment do
       market_name = i[1]
       url21 = "#{url2}#{v1.to_i}"
       docs21 = Nokogiri::HTML(open(url21), nil, 'utf-8')
-      p docs21
+      p docs21.text
       if docs21.text == 'null'
         break
       else
