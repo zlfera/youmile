@@ -23,12 +23,15 @@ call vundle#begin()
 """"""
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'vim-syntastic/syntastic'
-let g:syntastic_ruby_checkers = ['rubocop']
-let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_check_on_open = 1
-let g:syntastic_error_symbol = '✗'
-let g:syntastic_warning_symbol = '⚠'
+Plugin 'w0rp/ale'
+let &runtimepath.=',~/.vim/bundle/ale'
+""Plugin 'vim-syntastic/syntastic'
+""let g:syntastic_ruby_checkers = ['rubocop']
+""let g:syntastic_javascript_checkers = ['jshint']
+""let g:syntastic_check_on_open = 1
+""let g:syntastic_error_symbol = '✗'
+""let g:syntastic_warning_symbol = '⚠'
+
 ""let g:syntastic_auto_loc_list = 1
 ""let g:syntastic_loc_list_height = 5
 ""let g:syntastic_enable_highlighting = 0
@@ -37,12 +40,12 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-rails'
 Plugin 'vim-ruby/vim-ruby'
-Plugin 'kien/ctrlp.vim'
-hi PmenuSel ctermbg=lightblue
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+""Plugin 'kien/ctrlp.vim'
+""hi PmenuSel ctermbg=lightblue
+""let g:ctrlp_map = '<c-p>'
+""let g:ctrlp_cmd = 'CtrlP'
+""set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+""let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 let g:NERDTreeIndicatorMapCustom = {
 	\ "Modified"  : "✹",
