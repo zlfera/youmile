@@ -19,7 +19,7 @@ class Spider2guwuJob < ActiveJob::Base
         next if docs21.text == 'null'
         doc21 = JSON.parse(docs21.text)
         v2 = doc21[0]
-        (1..50).each do |i|
+        (1..10).each do |i|
           url31 = url3 + v2 + '-' + i.to_s
           docs31 = Nokogiri::HTML(open(url31, read_timeout: 5), nil, 'utf-8')
           next if docs31.text == 'null'
