@@ -23,8 +23,13 @@ call vundle#begin()
 """"""
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
+""Plugin 'skywind3000/asyncrun.vim'
+Plugin 'posva/vim-vue'
+Plugin 'chemzqm/wxapp.vim'
 Plugin 'w0rp/ale'
 let &runtimepath.=',~/.vim/bundle/ale'
+let g:ale_sign_error = '✗'
+let g:ale_sign_warning = '⚠'
 ""Plugin 'vim-syntastic/syntastic'
 ""let g:syntastic_ruby_checkers = ['rubocop']
 ""let g:syntastic_javascript_checkers = ['jshint']

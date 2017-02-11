@@ -1,0 +1,537 @@
+<head>
+    <meta charset="utf-8" />
+    <title>科学上网|MiaoSS妙速·加速器</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <!--[if !IE]> -->
+    <link href="https://miaoss.b0.upaiyun.com/css/semantic.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://miaoss.b0.upaiyun.com/css/jquery-ui.min.css">
+    <link rel="icon" href="https://miaoss.b0.upaiyun.com/favicon.ico">
+
+        <link rel="stylesheet" type="text/css" href="../static/css/main.css"/>
+    <style>
+             .buybox{
+                width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 30px;
+                margin-bottom: 20px;
+            }
+ 
+            .juli{
+                float: right;
+                /* bottom: 10px; */
+                margin-bottom: 10px;
+            }
+                    .header {
+                height: 50px;
+            }
+            .buys{
+                width: 980px;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 10px;
+            }
+    </style>
+<!-- <![endif]-->
+    <script src="//cdn.bootcss.com/instantclick/3.0.1/instantclick.min.js" data-no-instant></script>
+</head>
+<body>
+    <div class="ui fixed inverted menu">
+<!--        移动端-->
+        <button class="collapsed" type="button" id="test">
+            <div class="ui thin sidebar inverted vertical menu">
+                <h4 class="ui horizontal inverted divider">MiaoSS妙速·加速器</h4>
+                <h4 class="ui horizontal inverted divider">常用列表</h4>
+                <a class="item" href="/my/panel.php?page=1">首页</a><a class="item" href="/my/settings/information.php?page=1">余额&nbsp;0元</a><a class="item" href="/my/settings/">个人设置</a><a class="item" href="/my/list.php">服务器列表</a>                <div class="item"><a href="http://wiki.miaoss6.com/" target="_blank">使用说明</a></div>
+                <h4 class="ui horizontal inverted divider">升级VIP账户</h4>
+                <div class="menu">
+                    <a class="item" href="/my/plan/"><i class="Diamond icon"></i>购买VIP</a>
+                    <a class="item" href="/my/settings/information.php?page=1"><i class="Credit Card Alternative icon"></i>账户充值</a>
+                </div>
+                <h4 class="ui horizontal inverted divider">分享赚钱</h4>
+                <a class="item" href="/my/affiliate/">推广说明</a>
+                <a class="item" href="/my/affiliate/stats.php?page=1">推广记录</a>
+                <a class="item" href="/my/affiliate/auto.php">自助开通</a>
+                <div class="divider"></div>
+                <a class="item" href="/my/affiliate/outpay.php?page=1">佣金提现</a>
+
+                <h4 class="ui horizontal inverted divider">安全退出</h4>
+                <a class="item" href="/my/settings/">zlfera@msn.com</a>
+                <a class="item" href="/logout.php">退出登入</a>
+            </div>
+        </button>
+<!--      ./ 移动端 结束 -->
+        <div class="container">
+            <div class="title item" id="pc"><a href="/my/panel.php?page=1">MiaoSS妙速·加速器</a></div>
+            <div class="title item" id="pc"><a href="/my/panel.php?page=1">首页</a></div>
+                    <div class="title item " id="pc"><a href="/my/list.php">服务器列表</a></div>               <div class="title item" id="pc"><a href="http://wiki.miaoss6.com/" target="_blank">使用说明</a></div>
+                    <div class="ui simple dropdown item" id="pc">分享赚钱 <i class="dropdown icon"></i>
+								        <div class="menu">
+								          <a class="item" href="/my/affiliate/">推广说明</a>
+								          <a class="item" href="/my/affiliate/stats.php?page=1">推广记录</a>
+								          <a class="item" href="/my/affiliate/auto.php">自助开通</a>
+								          <div class="divider"></div>
+								          <a class="item" href="/my/affiliate/outpay.php?page=1">佣金提现</a>
+								        </div>
+							      </div>
+
+                    <!--<div class="title item"><a href="https://twitter.com/Miaosscom" target="_blank">官方Twitter</a></div>-->
+                </ul>
+                    <div class="right menu" style="margin-top: 2px;">
+                        <div class="title item"><a href="/my/plan/"><i class="Diamond icon"></i>购买VIP</a></div>
+                        <div class="title item"><a href="/my/settings/information.php?page=1"><i class="Credit Card Alternative icon"></i>充值</a></div>
+                         <div class="ui simple dropdown item" id="pc">我的账户<i class="dropdown icon"></i>
+                            <div class="menu">
+                                <a  href="/my/settings/information.php" class="item" >
+                                    <div class="detail" style="margin-left: 0px;">
+                                        <i class="Star Half Empty icon"></i>免费用户                                    </div>
+                                </a>
+                              <a class="item" href="/my/settings/information.php?page=1" data-instant><i class="yen icon"></i>余额:0元
+                              </a>
+
+                              <a class="item" href="/my/settings/information.php?page=1"><i class="Credit Card Alternative icon"></i>账户充值</a>
+                              <a class="item" href="/my/settings/"><i class="Write Square icon"></i>个人设置</a>
+                              <a class="item" href="/my/settings/">zlfera@msn.com</a>
+                               <!-- <a class="item" href="/my/settings/index.php">zlfera@msn.com                              </a> -->
+                              <a class="item" href="/logout.php"><i class="Sign Out icon"></i>退出登入</a>
+                             </div>
+                         </div>
+
+
+                    </div>
+                                </div>
+            <!--/.nav-collapse -->
+        </div>
+<!--激活-->
+    <style>
+    .yanzheng{
+        color: #fff;
+        background-color: #1e3944;
+        padding: 10px;
+    }
+</style>
+<div class="main">
+<div class="main_b">
+ <!--[if IE]>
+        <h1>我们不支持IE内核的浏览器，请使用<a href="http://chrome.360.cn/" target="_blank">360急速浏览器</a>或者Chrome等现代浏览器!</h1>
+    <![endif]-->
+
+<!--公告-->
+<a href="affiliate/" target="_blank"><img src="https://miaoss.b0.upaiyun.com/img/huodong_tuijian.jpg" class="ui massive image"></a>
+<!-- 活动 -->
+<a href="settings/information.php?page=1" target="_blank"><img src="https://ww3.sinaimg.cn/large/0060lm7Tgw1fbb0u6t7c8j30qo05kdhj.jpg" class="ui massive image"></a>
+
+
+    <div class="ui orange segment">
+        公告:<span style="box-sizing: inherit; er; color: rgba(0, 0, 0, 0.8); background: 0px 0px rgb(238, 238, 238); font-family: &quot;Microsoft YaHei&quot;; font-size: 24px;"><strong><span style="box-sizing: inherit;"><a href="https://www.miaossby.com/my/settings/information.php?page=1" style="box-sizing: inherit; background-image: initial; background-position: 0px 0px; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: rgb(0, 159, 218); text-decoration: none;"><span style="box-sizing: inherit; er; color: rgb(255, 0, 0);"><strong>新春特惠:首冲有礼！冲多少，送多少！</strong></span></a><span style="box-sizing: inherit; er; color: rgb(255, 0, 0);"><strong>| <a href="http://weibo.com/miaossgf" target="_blank">MIAOSS官方微博请关注</a></strong></span></span></strong></span><br />    </div>
+    <!--  信息显示 -->
+    <div class="ui three column grid">
+
+
+                  <div class="column">
+            <table class="ui celled striped table">
+                <thead>
+                <tr><th colspan="3">
+                        账户流量统计 <a href="./plan/" class="ui label"><i class="Star Half Empty icon"></i>免费用户 </a>                    </th>
+                </tr>
+
+                <tr><th colspan="3">
+                        <div class="ui indicating progress  active" data-percent="50">
+                            <div class="bar" style="-webkit-transition-duration: 300ms; transition-duration: 300ms; width: 65%;"></div>
+                            <div class="label">65% 已用</div>                        </div>
+                    </th>
+                </tr>
+
+
+                </thead>
+                <tbody>
+
+                <tr>
+                    <td>
+                        <i class="Calendar icon"></i> 到期时间
+                    </td>
+                    <td><div style="color: #5774E5;">永久/<a href="/plan/">更多流量</a></div></td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="Dashboard icon"></i> 套餐流量
+                    </td>
+                    <td>956.08MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="Cloud Download icon"></i> 已用下行流量
+                    </td>
+                    <td>584.20MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="Cloud Upload icon"></i> 已用上行流量
+                    </td>
+                    <td>44.95MB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="Signal icon"></i> 套餐剩余流量
+                    </td>
+                    <td>326.92MB</td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+<div class="column">
+            <table class="ui celled striped table">
+                <thead>
+                <tr><th colspan="3">
+                        Shadowsocks登录信息
+                    </th>
+                </tr></thead><tbody>
+                <tr>
+                    <td class="collapsing">
+                        <i class="Protect icon"></i> 加密方式
+                    </td>
+                    <td>AES-256-CFB</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="Plug icon"></i> 端口
+                    </td>
+                    <td>18099</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="Privacy icon"></i> 密码
+                    </td>
+                    <td>87600104 &nbsp;&nbsp;</td>
+                </tr>
+
+                <script type="text/javascript">
+                    $(document).ready(function(){
+                      $("#la").click(function(){
+                        $("#la").html("正在打开服务器列表.....");
+                      });
+                      $("#la").dblclick(function(){
+                        $("#la").html("正在打开服务器列表");
+                      });
+                    });
+                </script>
+                <tr>
+                    <td>
+                        <i class="Server icon"></i> 服务器地址
+                    </td>
+                    <td><a href="list.php" class="ui inverted green button" id="la">27个精品服务器</a></td>
+                </tr>
+                <tr>
+                    <td><i class="Repeat icon"></i>重置密码</td>
+                    <td>
+                        <button type="button" id="resetpasswd" class="ui button">重置密码</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        说明
+                    </td>
+                    <td>
+                        这里的密码与登录网站的密码无关。
+                    </td>
+                </tr>
+                 <!-- <tr>
+                    <td>
+                        <i class="file outline icon"></i> 服务状态
+                    </td>
+                    <td><button  type="button" id="restart" class="ui inverted yellow button">重启服务</button></td>
+                </tr> -->
+
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="column">
+        <table class="ui celled striped table">
+                            <thead>
+                <tr><th colspan="3">
+                        每日签到
+                    </th>
+                </tr></thead>
+                <tbody>
+
+                <tr>
+                    <td>
+                        <i class="Car icon"></i> 每日签到领流量
+                    </td>
+
+                    <td>
+                        <button type="button" id="gift500mb" class="ui teal button">摇一摇</button>
+                    </td>
+                     <td>
+                        还需等待12个小时                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="ui celled striped table">
+                <thead>
+                <tr>
+                    <th colspan="3">
+                        更新日志
+                        <div style="float: right;"><a href="gengxin.php">更多</a></div>
+                    </th>
+
+                </tr>
+                </thead>
+                <tbody>
+               <!--  <tr>
+                    <td>更新内容</td>
+                    <td>发布时间</td>
+                </tr> -->
+    
+                <tr>
+                <td>年费用户增加韩国SK线路<br /></td>
+                <td>2016-12-01</td>
+                </tr>
+
+        
+                <tr>
+                <td>年付用户增加两条国内线路</td>
+                <td>2016-11-22</td>
+                </tr>
+
+                 </tbody>
+                </table>
+        </div>
+
+            <div class="column">
+                <table class="ui celled striped table">
+                <thead>
+                <tr><th colspan="3">
+                        客户端下载
+                    </th>
+                </tr></thead><tbody>
+                <tr>
+                    <td>
+                        <i class="Windows icon"></i>Windows
+                    </td>
+                    <td><b><a href="http://7xl680.com1.z0.glb.clouddn.com/MiaoSS_Setup_1_0_4.zip" style="color: #ff0000;">MiaoSS专用客户端</a></b>|<a href="http://ershou2.qiniudn.com/newShadowsocks-win-2.2.zip">小飞机</a>|</td>
+                </tr>
+                <tr>
+                    <td class="collapsing">
+                        <i class="Desktop icon"></i>苹果电脑
+                    </td>
+                    <td><a href="http://7ktuwq.com2.z0.glb.qiniucdn.com/ShadowsocksX-2.6.3.dmg">Shadowsocks苹果电脑</a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="Apple icon"></i>iPhone
+                    </td>
+                    <td><a href="https://appsto.re/cn/pD8pgb.i" target="_blank">iOS客户端下载</a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="Android icon"></i>Android
+                    </td>
+                    <td><a href="http://7ktuwq.com2.z0.glb.qiniucdn.com/Shadowsocks_v2.10.1.apk">android客户端下载</a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="Linux icon"></i>Linux
+                    </td>
+                    <td><a href="https://github.com/shadowsocks/shadowsocks-gui">shadowsocks-gui</a></td>
+                </tr>
+                </tbody>
+            </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<style type="text/css">
+    .ui.list .item a {
+        cursor: pointer;
+        color: rgba(255, 255, 255, 1) !important;
+      }
+</style>
+
+    <footer>
+        <p>注意:不可发送垃圾邮件及大流量(P2P)下载,发送或转发违背您所在地法律的内容，等恶其他意行为。</p>
+<!--        <p>Note: You can not send spam and large traffic (P2P) downloads, send or forward content that violates the laws of your location, and so on.</p>-->
+    <div class="ui divided horizontal link list">
+        <div class="item">Copyright © 2014-2017 <a href="https://www.miaoss.com" >科学上网|MiaoSS妙速·加速器</a>  </div>
+        <div class="item"><a href="https://miaoss.kf5.com/request/guest/" target="_blank">联系客服</a></div>
+        <div class="item"><a href="https://twitter.com/Miaosscom" target="_blank">官方Twitter</a></div>
+        <div class="item"><a href="https://t.me/joinchat/AAAAAEFhRVigo7cGV21-dA" target="_blank">Telegram交流群(必加)</a></div>
+        <div class="item">在线人数:957</div>
+        <!-- tongzhi -->
+        <div class="ui basic modal">
+          <i class="close icon"></i>
+          <div class="header">
+            拿本记下，MiaoSS最新网址获取
+          </div>
+          <div class="image content">
+            <div class="image">
+              <i class="Write Square icon"></i>
+            </div>
+            <div class="description">
+              <p>永久网址: www.miaoss.com </p>
+              <p>获取最新网址：miaowuget@gmail.com ！（发送任意邮件） </p>
+            </div>
+          </div>
+          <div class="actions">
+            <div class="two fluid ui inverted buttons">
+              <div class="ui red basic inverted button">
+                <i class="remove icon"></i>
+                木有记录
+              </div>
+              <div class="ui green basic inverted button">
+                <i class="checkmark icon"></i>
+                记下了
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1254027205'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/stat.php%3Fid%3D1254027205' type='text/javascript'%3E%3C/script%3E"));</script>
+        </div>
+    </div>
+</footer>
+
+<script src="https://miaoss.b0.upaiyun.com/js/jquery.min.js"></script>
+<script src="https://miaoss.b0.upaiyun.com/js/jquery-ui.min.js"></script>
+<script src="https://miaoss.b0.upaiyun.com/js/jquery.form.js"></script>
+<script src="https://miaoss.b0.upaiyun.com/js/layer.js"></script>
+<script src="https://miaoss.b0.upaiyun.com/js/semantic.min.js"></script>
+<!-- form -->
+<script>
+    $(".collapsed").click(function(){
+        $('.ui.sidebar')
+            .sidebar('toggle')
+        ;;
+    });
+</script>
+  <script>
+            $(function() {
+                var youhui = 0.8;
+              $( "#slider-range-min" ).slider({
+                range: "min",
+                value: 100,
+                min: 100,
+                max: 1000,
+                slide: function( event, ui ) {
+                  $( "#amount" ).val( ui.value);
+                  $( "#amounts" ).val( ui.value*youhui);//8折
+                }
+              });
+              $( "#amount" ).val(  $( "#slider-range-min" ).slider( "value" ) );
+              $( "#amounts" ).val(  $( "#slider-range-min" ).slider( "value" )*youhui);
+            });
+        </script>
+<script type="text/javascript">
+    $('#jihuo')
+        .modal('setting', 'closable', false)
+        .modal('setting', 'autofocus', false)
+        .modal('setting', 'offset', -600)
+        .modal('show')
+    ;
+    $('.message .close')
+        .on('click', function() {
+            $(this)
+                .closest('.message')
+                .transition('fade')
+            ;
+        })
+    ;
+     //tab切换
+    $('.menu .item')
+    .tab()
+    ;
+    </script>
+<script> 
+$(document).ready(function(){
+        //registerForm'表单id
+	//data回调数据
+	$('#PostMiaoss').ajaxForm(function(data){
+		layer.open({
+                            shadeClose: true, //点击遮罩关闭
+                            content: data
+                        });//弹出ajax请求后的回调结果
+	});
+	$('#PostMiaoss_bn').ajaxForm(function(data){
+		layer.open({
+                            shadeClose: true, //点击遮罩关闭
+                            content: data
+                        });//弹出ajax请求后的回调结果
+	});
+	$('#PostMiaoss_yf').ajaxForm(function(data){
+		layer.open({
+                            shadeClose: true, //点击遮罩关闭
+                            content: data
+                        });//弹出ajax请求后的回调结果
+	});
+    $('#PostMiaoss_emailyanzheng').ajaxForm(function(data){
+        layer.open({
+            shadeClose: true, //点击遮罩关闭
+            content: data
+        });//弹出ajax请求后的回调结果
+    });
+});
+</script>
+<script type="text/javascript">
+      $(document).ready(function() { //resetpasswd
+             $("Button#resetpasswd").click(function() {
+                    if (confirm("是否重置密码?")){
+                             $.get("api.php", {
+                                cmd: "resetpasswd"
+                            }, function(a) {
+                                $("#passwd").val(a);
+                                layer.alert("您的新密码:"+a);
+                            });
+                              }else{
+                        return false;
+                        }
+                        });        
+                    });
+    $(document).ready(function() {
+        
+            $("Button#gift500mb").click(function() {
+                $.get("api.php", {
+                    cmd: "gift500mb"
+                }, function(a) {
+                    layer.alert(a);
+                     
+                });
+            });
+        });
+
+    </script>
+<script type="text/javascript">
+    $('.item')
+        .popup({
+            inline: true
+        })
+    ;
+    $('.required')
+        .popup({
+            inline: true
+        })
+    ;
+</script>
+<script type="text/javascript">
+    //每天只弹一次
+    window.onload = function () {  
+        //================  
+        var s = document.cookie;  
+        if (s.indexOf('myad=1') != -1) return; //存在cookie退出下面代码的执行  
+        var d = new Date();  
+        d.setHours(d.getHours() + 24); //有效期24小时  
+        document.cookie = 'myad=1;expires='+d.toGMTString();//设置cookie  
+        //================  
+        /*自己弹窗代码*/
+        $('.ui.basic.modal')
+        .modal('show')
+      ;
+    }
+</script>
+</body>
+
+
