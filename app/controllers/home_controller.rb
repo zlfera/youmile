@@ -16,9 +16,9 @@ class HomeController < ApplicationController
   end
 
   def grain_home
-    g = Grain.all.order(created_at: :desc).to_json
+    #g = Grain.all.order(created_at: :desc).to_json
     @redis = Redis.new(url: Rails.application.secrets.redis_url)
-    @redis.set('redis', g)
+    #@redis.set('redis', g)
     @redis = @redis.get('redis')
     @redis = JSON.parse(@redis)
     fresh_when(etag: @redis.size, public: true)

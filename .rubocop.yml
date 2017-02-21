@@ -28,7 +28,7 @@ Style/SpaceInsideHashLiteralBraces:
   Enabled: false
 Lint/EndAlignment:
   Enabled: true
-  AlignWith: variable
+  EnforcedStyleAlignWith: variable
 AllCops:
   UseCache: false
   Rails:
