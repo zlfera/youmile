@@ -1,1 +1,0 @@
-[{"severity":"convention","location":{"begin_pos":254,"end_pos":255},"message":"Do not use parentheses for method calls with no arguments.","cop_name":"Style/MethodCallParentheses","status":"uncorrected"}]

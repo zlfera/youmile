@@ -1,1 +1,0 @@
-[{"severity":"convention","location":{"begin_pos":222,"end_pos":223},"message":"Extra empty line detected at method body end.","cop_name":"Style/EmptyLinesAroundMethodBody","status":"uncorrected"}]

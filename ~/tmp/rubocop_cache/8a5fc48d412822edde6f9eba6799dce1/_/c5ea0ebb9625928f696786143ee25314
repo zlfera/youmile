@@ -1,1 +1,0 @@
-[{"severity":"convention","location":{"begin_pos":109,"end_pos":112},"message":"Do not use `Time.new` without zone. Use one of `Time.zone.now`, `Time.current`, `Time.new.in_time_zone`, `Time.new.utc`, `Time.new.getlocal`, `Time.new.iso8601`, `Time.new.jisx0301`, `Time.new.rfc3339`, `Time.new.to_i`, `Time.new.to_f` instead.","cop_name":"Rails/TimeZone","status":"unsupported"}]
