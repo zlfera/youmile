@@ -1,0 +1,36 @@
+Metrics/LineLength:
+  Max: 220
+  AllowURI: true
+  URISchemes:
+    - http
+    - https
+Documentation:
+  Enabled: false
+Metrics/BlockLength:
+  Max: 30
+Metrics/BlockNesting:
+  Max: 10
+Metrics/LineLength:
+  Max: 1200
+Metrics/ClassLength:
+  Max: 1200
+Metrics/MethodLength:
+  Max: 1200
+Metrics/ModuleLength:
+  Max: 1200
+Style/LeadingCommentSpace:
+  Enabled: false
+Style/SpaceBeforeComment:
+  Enabled: false
+Metrics/AbcSize:
+  Enabled: true
+Style/SpaceInsideHashLiteralBraces:
+  Enabled: false
+Lint/EndAlignment:
+  Enabled: true
+  EnforcedStyleAlignWith: variable
+AllCops:
+  UseCache: false
+  Rails:
+    Enabled: true
+    TargetRubyVersion: 2.3

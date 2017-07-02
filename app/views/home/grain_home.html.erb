@@ -1,0 +1,35 @@
+<div>
+  <h1>稻谷历史交易记录</h1>
+  <table class='table table-bordered table-striped'>
+    <thead>
+      <tr>
+        <td>交易时间</td>
+        <td>交货地址</td>
+        <td>类型</td>
+        <td>品种</td>
+        <td>等级</td>
+        <td>年份</td>
+        <td>交易数量</td>
+        <td>起始价格</td>
+        <td>最终价格</td>
+
+      </tr>
+    </thead>
+    <tbody>
+      <% (0..(@redis.size - 1)).each do |i| %>
+        <tr>
+          <td><%= @redis[i]['created_at'].to_time.strftime('%Y-%m-%d') %></td>
+          <td><%= @redis[i]['address'] %></td>
+          <td><%= @redis[i]['trantype'] %></td>
+          <td><%= @redis[i]['variety'] %></td>
+          <td><%= @redis[i]['grade'] %></td>
+          <td><%= @redis[i]['year'] %></td>
+          <td><%= @redis[i]['trade_amount'] %></td>
+          <td><%= @redis[i]['starting_price'] %></td>
+          <td><%= @redis[i]['latest_price'] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
