@@ -6,7 +6,7 @@ class HomeController < ApplicationController
     # respond_to do |format|
     # format.html
     # end
-    Spider2guwuJob.perform_later
+    #Spider2guwuJob.perform_later
   end
 
   def grain_index
@@ -16,11 +16,11 @@ class HomeController < ApplicationController
   end
 
   def grain_home
-    #g = Grain.all.order(created_at: :desc).to_json
-    @redis = Redis.new(url: Rails.application.secrets.redis_url)
+    @redis = Grain.all.order(created_at: :desc).to_json
+    #@redis = Redis.new(url: Rails.application.secrets.redis_url)
     #@redis.set('redis', g)
-    @redis = @redis.get('redis')
-    @redis = JSON.parse(@redis)
+    #@redis = @redis.get('redis')
+    #@redis = JSON.parse(@redis)
     fresh_when(etag: @redis.size, public: true)
     ##@redis = @redis.reverse
   end
