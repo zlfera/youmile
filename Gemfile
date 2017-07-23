@@ -1,5 +1,5 @@
 source 'https://gems.ruby-china.org'#'https://rubygems.org'
-#ruby '2.3.3'
+ruby '2.4.1'
 gem 'mechanize'
 gem 'rails'
 gem 'spreadsheet'
