@@ -1,4 +1,4 @@
-task :first => :environment do
+task first: :environment do
   require 'open-uri'
   require 'json'
   url1 = 'http://220.248.203.59:8686/rtp/data/race/getAllRaceMarketing.jsp'
