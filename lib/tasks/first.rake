@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 task first: :environment do
   require 'open-uri'
   require 'json'
@@ -7,7 +9,7 @@ task first: :environment do
   docs = Nokogiri::HTML(open(url1, read_timeout: 5), nil, 'utf-8')
   return if docs.text == 'null'
   doc = JSON.parse(docs.text)
-  puts doc
+  pp doc
   doc.each do |i|
     v1 = i[0]
     market_name = i[1]
@@ -16,13 +18,13 @@ task first: :environment do
     next if docs21.text == 'null'
     doc21 = JSON.parse(docs21.text)
     v2 = doc21[0]
-    puts v2
+    pp v2
     (1..50).each do |i|
       url31 = url3 + v2 + '-' + i.to_s
       docs31 = Nokogiri::HTML(open(url31, read_timeout: 5), nil, 'utf-8')
       next if docs31.text == 'null'
       doc31 = JSON.parse(docs31.text)
-      puts doc31
+      pp doc31
       doc31.each do |d|
         next if d[11] == 'A' || d[11] == 'B'
         d[7] = '流拍' if d[11] == 'G'

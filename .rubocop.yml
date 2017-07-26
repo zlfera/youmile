@@ -6,8 +6,10 @@ Metrics/LineLength:
     - https
 Documentation:
   Enabled: false
+Lint/ShadowingOuterLocalVariable:
+  Enabled: false
 Metrics/BlockLength:
-  Max: 30
+  Enabled: false
 Metrics/BlockNesting:
   Max: 10
 Metrics/LineLength:
@@ -18,6 +20,8 @@ Metrics/MethodLength:
   Max: 1200
 Metrics/ModuleLength:
   Max: 1200
+Performance/CompareWithBlock:
+  Enabled: true
 Style/LeadingCommentSpace:
   Enabled: false
 Style/SpaceBeforeComment:
@@ -26,6 +30,8 @@ Metrics/AbcSize:
   Enabled: true
 Style/SpaceInsideHashLiteralBraces:
   Enabled: false
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: always
 Lint/EndAlignment:
   Enabled: true
   EnforcedStyleAlignWith: variable
@@ -33,4 +39,5 @@ AllCops:
   UseCache: false
   Rails:
     Enabled: true
-    TargetRubyVersion: 2.3
+    TargetRubyVersion: 2.4
+    TargetRailsVersion: 5.1
