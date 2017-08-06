@@ -9,9 +9,9 @@ task :ss do
   username_field.value = 'zlfera@msn.com'
   password_field = login_form.field_with(name: 'pass')
   password_field.value = '123456z'
-  step2_page = agent.submit login_form
-  puts 'step2_page'
-  tmp_cookie = agent.cookie_jar
-  agent.cookie_jar = tmp_cookie
-  puts agent.get('https://www.miaoss3.top/my/panel.php?page=1')
+  agent.submit login_form
+  # tmp_cookie = agent.cookie_jar
+  # agent.cookie_jar = tmp_cookie
+  # agent.get('https://www.miaoss3.top/my/panel.php?page=1')
+  agent.get('https://www.miaoss3.top/my/api.php?cmd=gift500mb')
 end
