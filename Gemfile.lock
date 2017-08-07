@@ -201,6 +201,7 @@ DEPENDENCIES
   pry-rails
   puma
   rails
+  redis
   sass-rails
   scout_apm
   sidekiq
