@@ -197,7 +197,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass
-  bundler
+  bundler (~> 1.15.2)
   byebug
   listen
   mechanize
