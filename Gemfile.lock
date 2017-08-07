@@ -197,7 +197,6 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass
-  bundler (~> 1.15.2)
   byebug
   listen
   mechanize
@@ -219,9 +218,6 @@ DEPENDENCIES
   tzinfo-data
   uglifier
   web-console
-
-RUBY VERSION
-   ruby 2.4.1p111
 
 BUNDLED WITH
    1.15.3

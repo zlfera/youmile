@@ -1,6 +1,5 @@
 source 'https://gems.ruby-china.org'
-ruby '2.4.1'
-gem 'bundler', '~> 1.15.2'
+# ruby '2.4.1'
 gem 'mechanize'
 gem 'rails'
 gem 'spreadsheet'
