@@ -21,8 +21,3 @@
 set :job_template, "zsh -l -c ':job'"
 env :PATH, ENV['PATH']
 # set :environment, :development
-
-
-every 1.minute do
-  rake "first"
-end

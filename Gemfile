@@ -2,7 +2,7 @@ source 'https://gems.ruby-china.org'
 # ruby '2.4.1'
 gem 'mechanize'
 gem 'rails'
-gem 'spreadsheet'
+#gem 'spreadsheet'
 gem 'newrelic_rpm', group: :production
 #gem 'whenever', require: false
 gem 'pry-rails', group: :development
@@ -10,14 +10,13 @@ gem 'pry-rails', group: :development
 gem 'bootstrap-sass'
 # Use sqlite3 as the database for Active Record
 group :development, :test do
-  gem 'sqlite3'#, group: :development
+  gem 'sqlite3'
 end
 group :production do
   gem 'pg'
-  gem 'scout_apm'
-  gem 'tunemygc'
+  #gem 'scout_apm'
+  #gem 'tunemygc'
 end
-#gem 'pg', group: :production
 # Use Puma as the app server
 gem 'puma'#, '~> 3.0'
 # Use SCSS for stylesheets
@@ -36,8 +35,8 @@ gem 'turbolinks'#, '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 #gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
-gem 'redis'#, '~> 3.0'
-gem 'sidekiq'
+#gem 'redis'#, '~> 3.0'
+#gem 'sidekiq'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
