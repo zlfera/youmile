@@ -1,4 +1,4 @@
-source 'https://gems.ruby-china.org'#'https://rubygems.org'
+source 'https://rubygems.org'
 ruby '2.4.1'
 gem 'mechanize'
 gem 'rails'
