@@ -1,7 +1,7 @@
 source 'https://gems.ruby-china.org'
 # ruby '2.4.1'
 gem 'mechanize'
-gem 'rails'
+gem 'rails', '~> 5.1.2'
 #gem 'spreadsheet'
 gem 'newrelic_rpm', group: :production
 #gem 'whenever', require: false
@@ -15,7 +15,7 @@ end
 group :production do
   gem 'pg'
   gem 'scout_apm'
-  #gem 'tunemygc'
+  gem 'tunemygc'
 end
 # Use Puma as the app server
 gem 'puma'#, '~> 3.0'

@@ -166,6 +166,7 @@ GEM
     thor (0.19.4)
     thread_safe (0.3.6)
     tilt (2.0.8)
+    tunemygc (1.0.69)
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
     turbolinks-source (5.0.3)
@@ -200,7 +201,7 @@ DEPENDENCIES
   pg
   pry-rails
   puma
-  rails
+  rails (~> 5.1.2)
   redis
   sass-rails
   scout_apm
@@ -208,6 +209,7 @@ DEPENDENCIES
   spring
   spring-watcher-listen
   sqlite3
+  tunemygc
   turbolinks
   tzinfo-data
   uglifier
