@@ -16,6 +16,7 @@ group :production do
   gem 'pg'
   gem 'scout_apm'
   gem 'tunemygc'
+  gem 'rails_autoscale_agent'
 end
 # Use Puma as the app server
 gem 'puma'#, '~> 3.0'
