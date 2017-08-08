@@ -201,7 +201,7 @@ DEPENDENCIES
   pg
   pry-rails
   puma
-  rails (~> 5.1.2)
+  rails
   redis
   sass-rails
   scout_apm

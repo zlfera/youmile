@@ -1,7 +1,7 @@
 source 'https://gems.ruby-china.org'
 # ruby '2.4.1'
 gem 'mechanize'
-gem 'rails', '~> 5.1.2'
+gem 'rails'
 #gem 'spreadsheet'
 gem 'newrelic_rpm', group: :production
 #gem 'whenever', require: false
