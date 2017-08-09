@@ -13,6 +13,7 @@ task second: :environment do
     url1_json = JSON.parse(doc1.text)
     url2_json = JSON.parse(doc2.text)
     url3_json = JSON.parse(doc3.text)
+    binding.pry
     data_array = []
     if !url1_json.empty?
       while url2_json['status'] == 'yes'
