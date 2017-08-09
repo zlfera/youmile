@@ -11,7 +11,6 @@ task :ss do
   password_field = login_form.field_with(name: 'pass')
   password_field.value = '123456z'
   agent.submit login_form
-  binding.pry
   # tmp_cookie = agent.cookie_jar
   # agent.cookie_jar = tmp_cookie
   # agent.get('https://www.miaoss3.top/my/panel.php?page=1')
