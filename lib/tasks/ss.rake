@@ -15,4 +15,5 @@ task :ss do
   # agent.cookie_jar = tmp_cookie
   # agent.get('https://www.miaoss3.top/my/panel.php?page=1')
   agent.get('https://www.miaoss3.top/my/api.php?cmd=gift500mb')
+  binding.pry
 end
