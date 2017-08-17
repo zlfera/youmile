@@ -4,7 +4,7 @@ task second: :environment do
   require 'open-uri'
   require 'json'
   url1 = 'http://123.127.88.167:8888/tradeClient/observe/specialList'
-  url2 = 'http://123.127.88.167:8888/tradeClient/observe/requestList?specialList=1418'
+  url2 = 'http://123.127.88.167:8888/tradeClient/observe/requestList?specialList=1002'
   url3 = 'http://123.127.88.167:8888/tradeClient/observe/statistic'
   loop do
     doc1 = Nokogiri::HTML(open(url1, read_timeout: 2), nil, 'utf-8')
