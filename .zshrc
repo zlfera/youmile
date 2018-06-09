@@ -1,13 +1,22 @@
 # If you come from bash you might have to change your $PATH.
-  export PATH="$PREFIX:/data/data/com.termux/files/usr/bin:/data/data/com.termux/files/usr/bin/applets"
-DISABLE_UPDATE_PROMPT=true
-alias f='foreman start'
+  export PATH="$PATH:$HOME/y_umbrella:$PREFIX/bin:$HOME/elixir/bin:$HOME/go/bin:/data/data/com.termux/files/usr/bin:/data/data/com.termux/files/usr/bin/applets"
+
 # Path to your oh-my-zsh installation.
   export ZSH=/data/data/com.termux/files/home/.oh-my-zsh
+  alias v="nvim"
+  alias p="pg_ctl -D /data/data/com.termux/files/home/data -l logfile start"
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="robbyrussell"
+
+# Set list of themes to load
+# Setting this variable when ZSH_THEME=random
+# cause zsh load theme from this variable instead of
+# looking in ~/.oh-my-zsh/themes/
+# An empty array have no effect
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -50,7 +59,9 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=()
+plugins=(
+  git
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -72,7 +83,7 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
