@@ -11,9 +11,10 @@ loop do
 if a==nil
 a
 else
-a.each do |i|
-if i['remainSeconds'].to_i == 0
-g = Grain.new(market_name: market_name, mark_number: d[1], year: d[2], variety: d[3], grade: d[4], trade_amount: d[5].delete(','), starting_price: d[6].delete(','), latest_price: d[7].delete(','), address:d[9], status: d[11], trantype: d[13])
+a.each do |d|
+if d['remainSeconds'].to_i == 0
+g = Grain.new(market_name: '国家交易平台', mark_number: d['requestAlias'], year: d[2], variety: d['varietyName'], grade: d['gradeName'], trade_amount: d['num'], starting_price: d['basePrice'], latest_price: d['currentPrice'], address:d['requestBuyDepotName'], status: d['statusName'], trantype: '拍卖')
+g.save
 else
 a
 end
