@@ -27,7 +27,7 @@ if d['remainSeconds'].to_i == 0
   else
     y='13'
   end
-g = Grain.new(market_name: '国家交易平台', mark_number: d['requestAlias'], year: y, variety: d['varietyName'], grade: d['gradeName'], trade_amount: d['num'], starting_price: d['basePrice'], latest_price: d['currentPrice'], address:d['requestBuyDepotName'], status: d['statusName'], trantype: '拍卖')
+g = Grain.new(market_name: 'guojia', mark_number: d['requestAlias'], year: y, variety: d['varietyName'], grade: d['gradeName'], trade_amount: d['num'], starting_price: d['basePrice'], latest_price: d['currentPrice'], address:d['requestBuyDepotName'], status: d['statusName'], trantype: '拍卖')
 g.save
 else
 a
