@@ -5,7 +5,7 @@ def a
   u = 'http://123.127.88.167:8888/tradeClient/observe/requestList'
   uu='http://36.33.35.40:8888/tradeClient/observe/requestList?speciaINo=1418'
   uuu='http://123.127.88.167:8888/tradeClient/observe/specialList'
-d=Nokogiri::HTML(open(u),nil,'utf-8')
+d=Nokogiri::HTML(open(u,read_timeout: 5),nil,'utf-8')
 dd=JSON.parse(d.text)
 dddd=dd['status']
 ddd=dd['rows']
