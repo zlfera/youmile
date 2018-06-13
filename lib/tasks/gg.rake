@@ -25,11 +25,6 @@ loop do
   if x.size == 0
     break
   else
-
-  if m == 'no'
-    pp 'ok'
-    break
-  else
     if n.nil?
       a
     else
@@ -43,12 +38,11 @@ loop do
           t = '拍卖'
           g = Grain.new(market_name: 'guojia', mark_number: d['requestAlias'], year: y, variety: d['varietyName'], grade: d['gradeName'], trade_amount: d['num'], starting_price: d['basePrice'], latest_price: d['currentPrice'], address: d['requestBuyDepotName'], status: d['statusName'], trantype: t)
           g.save
-        else
-          a
+          else
+          next
         end
       end
     end
   end
-end
 end
 end
