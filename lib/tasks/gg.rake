@@ -41,7 +41,7 @@ loop do
       a
     else
       n.each do |d|
-        if d['remainSeconds'] < '2'
+        if d['remainSeconds'].to_i < 2
           if d['requestAlias'].nil?
             y = '13'
           else
