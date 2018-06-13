@@ -3,7 +3,7 @@ task gg: :environment do
   require 'json'
 def a
   #u = 'http://123.127.88.167:8888/tradeClient/observe/requestList'
-  uu = 'http://36.33.35.40:8888/tradeClient/observe/requestList?speciaINo='
+  uu = 'http://123.127.88.167:8888/tradeClient/observe/requestList?speciaINo='
   uuu = 'http://123.127.88.167:8888/tradeClient/observe/specialList'
   dq = Nokogiri::HTML(open(uuu, read_timeout: 5), nil, 'utf-8')
   dqq = JSON.parse(dq.text)
