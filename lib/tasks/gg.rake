@@ -1,17 +1,25 @@
 task gg: :environment do
-  require 'open-uri'
+  require 'http'
   require 'json'
 def a
   #u = 'http://123.127.88.167:8888/tradeClient/observe/requestList'
   begin
   uu = 'http://123.127.88.167:8888/tradeClient/observe/requestList?speciaINo='
   uuu = 'http://123.127.88.167:8888/tradeClient/observe/specialList'
-  dq = Nokogiri::HTML(open(uuu, read_timeout: 5), nil, 'utf-8')
-  dqq = JSON.parse(dq.text)
+  #dq = Nokogiri::HTML(open(uuu, read_timeout: 5), nil, 'utf-8')
+  dq = HTTP.get(uuu).to_s
+  #dqq = JSON.parse(dq.text)
+  dqq = JSON.parse(dq)
+  if dqq[0].nil?
+    dqqq = ''
+  else
   dqqq = dqq[0]['specialNo']
+  end
   u = uu + dqqq
-  d = Nokogiri::HTML(open(u, read_timeout: 5), nil, 'utf-8')
-  dd = JSON.parse(d.text)
+  #d = Nokogiri::HTML(open(u, read_timeout: 5), nil, 'utf-8')
+  d = HTTP.get(u).to_s
+  #dd = JSON.parse(d.text)
+  dd = JSON.parse(d)
   dddd = dd['status']
   ddd = dd['rows']
   [dddd, ddd, dqq]
@@ -21,8 +29,12 @@ def a
 end
 
 loop do
+  sleep 0.2
   m, n, x = a
-  if x.size == 0
+  if x.empty?
+    p m
+    p n
+    p x
     break
   else
     if n.nil?
@@ -30,15 +42,19 @@ loop do
     else
       n.each do |d|
         if d['remainSeconds'] < '2'
-          if m == 'yes'
-            y = d['requestAlias'][11] + d['requestAlias'][12]
-          else
+          if d['requestAlias'].nil?
             y = '13'
+          else
+            y = d['requestAlias'][11] + d['requestAlias'][12]
           end
           t = '拍卖'
-          g = Grain.new(market_name: 'guojia', mark_number: d['requestAlias'], year: y, variety: d['varietyName'], grade: d['gradeName'], trade_amount: d['num'], starting_price: d['basePrice'], latest_price: d['currentPrice'], address: d['requestBuyDepotName'], status: d['statusName'], trantype: t)
-          g.save
+          if d['currentPrice'] == '0'
+            next
           else
+            g = Grain.new(market_name: 'guojia', mark_number: d['requestAlias'], year: y, variety: d['varietyName'], grade: d['gradeName'], trade_amount: d['num'], starting_price: d['basePrice'], latest_price: d['currentPrice'], address: d['requestBuyDepotName'], status: d['statusName'], trantype: t)
+            g.save
+          end
+        else
           next
         end
       end
