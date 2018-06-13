@@ -34,7 +34,7 @@ loop do
       a
     else
       n.each do |d|
-        if d['remainSeconds'] == '0'
+        if d['remainSeconds'] < '2'
           if m == 'yes'
             y = d['requestAlias'][11] + d['requestAlias'][12]
           else
