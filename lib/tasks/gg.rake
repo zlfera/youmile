@@ -3,6 +3,7 @@ task gg: :environment do
   require 'json'
 def a
   #u = 'http://123.127.88.167:8888/tradeClient/observe/requestList'
+  begin
   uu = 'http://123.127.88.167:8888/tradeClient/observe/requestList?speciaINo='
   uuu = 'http://123.127.88.167:8888/tradeClient/observe/specialList'
   dq = Nokogiri::HTML(open(uuu, read_timeout: 5), nil, 'utf-8')
@@ -14,6 +15,9 @@ def a
   dddd = dd['status']
   ddd = dd['rows']
   [dddd, ddd, dqq]
+  rescue
+  retry
+  end
 end
 
 loop do
