@@ -29,7 +29,7 @@ def a
 end
 
 loop do
-  sleep 0.2
+  sleep 0.3
   m, n, x = a
   if x.empty?
     p m
