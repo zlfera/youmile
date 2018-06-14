@@ -45,12 +45,12 @@ loop do
             y = d['requestAlias'][11] + d['requestAlias'][12]
           end
           t = '拍卖'
-          if d['currentPrice'] == '0'
-            next
-          else
+          #if d['currentPrice'] == '0'
+           # next
+          #else
             g = Grain.new(market_name: 'guojia', mark_number: d['requestAlias'], year: y, variety: d['varietyName'], grade: d['gradeName'], trade_amount: d['num'], starting_price: d['basePrice'], latest_price: d['currentPrice'], address: d['requestBuyDepotName'], status: d['statusName'], trantype: t)
             g.save
-          end
+          #end
         else
           next
         end
