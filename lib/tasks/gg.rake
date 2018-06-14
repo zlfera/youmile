@@ -32,9 +32,6 @@ loop do
   sleep 0.3
   m, n, x = a
   if x.empty?
-    p m
-    p n
-    p x
     break
   else
     if n.nil?
