@@ -4,7 +4,7 @@ task gg: :environment do
 def a
   #u = 'http://123.127.88.167:8888/tradeClient/observe/requestList'
   begin
-  uu = 'http://123.127.88.167:8888/tradeClient/observe/requestList?speciaINo='
+  uu = 'http://123.127.88.167:8888/tradeClient/observe/requestList?specialNo='
   uuu = 'http://123.127.88.167:8888/tradeClient/observe/specialList'
   #dq = Nokogiri::HTML(open(uuu, read_timeout: 5), nil, 'utf-8')
   dq = HTTP.get(uuu).to_s
