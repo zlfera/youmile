@@ -2,7 +2,6 @@
 
 task first: :environment do
   require 'open-uri'
-  require 'json'
   url1 = 'http://220.248.203.59:8686/rtp/data/race/getAllRaceMarketing.jsp'
   url2 = 'http://220.248.203.59:8686/rtp/data/race/getRaceMeeting.jsp?id='
   url3 = 'http://220.248.203.59:8686/rtp/data/race/getRaceTacheDetail.jsp?id='
