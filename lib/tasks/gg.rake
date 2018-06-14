@@ -37,6 +37,9 @@ loop do
     p x
     break
   else
+    if n.nil?
+      a
+    else
       n.each do |d|
         if d['remainSeconds'].to_i < 2
           if d['requestAlias'].nil?
@@ -55,6 +58,7 @@ loop do
           next
         end
       end
+    end
   end
 end
 end
