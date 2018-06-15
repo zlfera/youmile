@@ -21,8 +21,9 @@ task first: :environment do
     v2 = doc21[0]
     x = doc21[2].to_i
     #pp doc21
-    (1..x).each do |i|
-      url31 = url3 + v2 + '-' + i.to_s
+    (1..x).each do |ii|
+      url31 = url3 + v2 + '-' + ii.to_s
+      pp url31
       #docs31 = Nokogiri::HTML(open(url31, read_timeout: 5), nil, 'utf-8').text
       docs31 = HTTP.get(url31).to_s
       next if docs31 == 'null'
