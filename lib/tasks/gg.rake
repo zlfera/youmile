@@ -6,11 +6,11 @@ task gg: :environment do
     begin
       uu = 'http://123.127.88.167:8888/tradeClient/observe/requestList?specialNo='
       uuu = 'http://123.127.88.167:8888/tradeClient/observe/specialList'
-      dq = HTTP.get(uuu).to_s
+      dq = HTTP.timeout(:global, :write => 1, :connect => 1, :read => 1).get(uuu).to_s
       dqq = JSON.parse(dq)
       dqq[0].nil? ? dqqq = '' : dqqq = dqq[0]['specialNo']
       u = uu + dqqq
-      d = HTTP.get(u).to_s
+      d = HTTP.timeout(:global, :write => 1, :connect => 1, :read => 1).get(u).to_s
       dd = JSON.parse(d)
       ddd = dd['rows']
       [ddd, dqq]
