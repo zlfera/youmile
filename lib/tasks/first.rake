@@ -23,12 +23,12 @@ task first: :environment do
     #pp doc21
     (1..50).each do |ii|
       url31 = url3 + v2 + '-' + ii.to_s
-      pp url31
+      #pp url31
       #docs31 = Nokogiri::HTML(open(url31, read_timeout: 5), nil, 'utf-8').text
       docs31 = HTTP.get(url31).to_s
       next if docs31 == 'null'
       doc31 = JSON.parse(docs31)
-      pp doc31
+      #pp doc31
       doc31.each do |d|
         next if d[11] == 'A' || d[11] == 'B'
         d[7] = '流拍' if d[11] == 'G'
