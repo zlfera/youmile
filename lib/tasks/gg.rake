@@ -20,7 +20,7 @@ task gg: :environment do
   end
 
   loop do
-
+    sleep 0.5
     n, x = a
     break if x.empty?
     next if n.nil?
