@@ -23,7 +23,7 @@ task gg: :environment do
 
     n, x = a
     break if x.empty?
-    a if n.nil?
+    next if n.nil?
     n.each do |d|
       if d['remainSeconds'].to_i < 2
         d['requestAlias'].nil? ? y = '13' : y = d['requestAlias'][11] + d['requestAlias'][12]
