@@ -20,6 +20,7 @@ task gg: :environment do
   end
 
   loop do
+    begin
     n, x = a
     break if x.empty?
     next if n.nil?
@@ -32,6 +33,9 @@ task gg: :environment do
       else
         next
       end
+    end
+    rescue
+      retry
     end
   end
 end
