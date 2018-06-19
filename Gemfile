@@ -2,9 +2,9 @@ source 'https://rubygems.org'#'https://gems.ruby-china.org'
 ruby '2.5.1'
 gem 'mechanize'
 gem 'rails'
-gem 'http'
+#gem 'http'
 #gem 'spreadsheet'
-gem 'newrelic_rpm', group: :production
+#gem 'newrelic_rpm', group: :production
 #gem 'whenever', require: false
 gem 'pry-rails', group: :development
 
@@ -15,9 +15,9 @@ group :development, :test do
 end
 group :production do
   gem 'pg'
-  gem 'scout_apm'
-  gem 'tunemygc'
-  gem 'rails_autoscale_agent'
+ # gem 'scout_apm'
+  #gem 'tunemygc'
+ # gem 'rails_autoscale_agent'
 end
 # Use Puma as the app server
 gem 'puma'#, '~> 3.0'
