@@ -21,7 +21,7 @@ class HomeController < ApplicationController
     #@redis.set('redis', g)
     #@redis = @redis.get('redis')
     #@redis = JSON.parse(@redis)
-  #  fresh_when(etag: Grain.all.size, public: true)
-    ##@redis = @redis.reverse
+    #fresh_when(etag: Grain.all.size, public: true)
+    #@redis = @redis.reverse
   end
 end
