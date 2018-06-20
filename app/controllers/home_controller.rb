@@ -16,7 +16,11 @@ class HomeController < ApplicationController
   end
 
   def grain_home
-    @redis = Grain.all.where("latest_price != '0'").where("latest_price != '拍卖'").order(created_at: :desc)#.to_json
+    if params[:value] != "品种" || params[:value] != ''
+      @redis = Grain.where("variety == ?", params[:value]).where("latest_price != '0'").where("latest_price != '拍卖'").order(created_at: :desc)#.to_json
+    else
+      @redis = Grain.where("latest_price != '0'").where("latest_price != '拍卖'").order(created_at: :desc)
+    end
     #@redis = Redis.new(url: Rails.application.secrets.redis_url)
     #@redis.set('redis', g)
     #@redis = @redis.get('redis')
