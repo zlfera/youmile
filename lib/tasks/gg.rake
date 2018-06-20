@@ -26,16 +26,19 @@ task gg: :environment do
 #    dqq = JSON.parse(dq.text)
 #    break if dqq.empty?               #['1','2','3']
 #    dqq.each do |i|
-#      if 
-#      n = a['specialNo']
-#      ii << Thread.new {
-#        loop do
-#          break if dqq.empty?
+  #     if qw.nil?
+#         n = a['specialNo']
+#         ii << Thread.new {
+#         loop do
+#           break if dqq.empty?
 #
-#        end
+#         end
 #
-#          }
-#      qw.append(ii) until qw.include?(ii)
+#         }
+#         qw.append(ii) until qw.include?(ii)
+  #     else
+  #       
+  #     end
 #    end
 #    end
 #  end
