@@ -16,7 +16,7 @@ class HomeController < ApplicationController
   end
 
   def grain_home
-    @redis = Grain.where('latest_price != "0"').order(created_at: :desc)#.to_json
+    @redis = Grain.order(created_at: :desc)#.to_json
     #@redis = Redis.new(url: Rails.application.secrets.redis_url)
     #@redis.set('redis', g)
     #@redis = @redis.get('redis')
