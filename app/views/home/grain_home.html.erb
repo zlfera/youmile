@@ -1,6 +1,6 @@
 <div>
   <h1>稻谷历史交易记录</h1>
-  <form accept-charset="UTF-8" action="/" method="get">
+  <%= form_tag :remote => true do %>
   <table class='table table-bordered table-striped'>
     <thead>
       <tr>
@@ -42,6 +42,6 @@
       <% end %>
     </tbody>
   </table>
-  </form>
+<% end %> 
 </div>
 
