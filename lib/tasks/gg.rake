@@ -27,9 +27,10 @@ task gg: :environment do
 #    break if dqq.empty?               #['1','2','3']
 #    dqq.each do |i|
   #     if qw.nil?
-#         n = a['specialNo']
 #         ii << Thread.new {
 #         loop do
+  #         n = a(i['specialNo'])
+  #         next if n.nil?
 #           break if dqq.empty?
 #
 #         end
