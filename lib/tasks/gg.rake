@@ -31,7 +31,20 @@ task gg: :environment do
 #         loop do
   #         n = a(i['specialNo'])
   #         break if n.nil?
-#
+  #         n.each do |d|
+#             if d['remainSeconds'].to_i < 2
+#               if d['requestAlias'].length < 15 or d['requestAlias'].nil?
+#                 y = '13'
+#               else
+#                 y = d['requestAlias'][11] + d['requestAlias'][12]
+#               end
+#              t= '拍卖'
+#              g = Grain.new(market_name: 'guojia', mark_number: d['requestAlias'], year: y, variety: d['varietyName'], grade: d['gradeName'], trade_amount: d['num'], starting_price: d['basePrice'], latest_price: d['currentPrice'], address: d['requestBuyDepotName'], status: d['statusName'], trantype: t)
+#              g.save
+#             else
+#               next
+#             end
+#           end
 #         end
 #
 #         }
@@ -56,7 +69,7 @@ task gg: :environment do
           n.each do |d|
             if d['remainSeconds'].to_i < 2
               if d['requestAlias'].length < 15 or d['requestAlias'].nil?
-                y = '13'
+                y = '00'
               else
                 y = d['requestAlias'][11] + d['requestAlias'][12]
               end
