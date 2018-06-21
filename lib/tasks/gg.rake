@@ -46,7 +46,7 @@ task gg: :environment do
         p qw 
         p qw[i['specialNo']]
       else
-        if !qw[i['specialNo']].status
+        if qw[i['specialNo']].status == false
           p qw[i['specialNo']]
           qw.delete(i['specialNo'])
           p qw
