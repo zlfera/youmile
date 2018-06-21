@@ -21,7 +21,13 @@ task gg: :environment do
     dqq = JSON.parse(dq.text)
     break if dqq.empty?
     dqq.each do |i|
-      if !qw.has_key?(i['specialNo'])
+      if qw.has_key?(i['specialNo'])
+        if qw[i['specialNo']].alive?
+          next
+        else
+          qw.delete(i['specialNo'])
+        end
+      else
         ii = Thread.new(i) do |i|
           loop do
             n = a(i['specialNo'])
@@ -43,16 +49,6 @@ task gg: :environment do
           end
         end
         qw.store(i['specialNo'], ii)
-        p qw
-        p qw[i['specialNo']]
-      else
-        if !qw[i['specialNo']].alive?
-          p qw[i['specialNo']]
-          qw.delete(i['specialNo'])
-          p qw
-        else
-          next
-        end
       end
     end
   end
