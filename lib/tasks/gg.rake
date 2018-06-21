@@ -22,7 +22,7 @@ task gg: :environment do
     break if dqq.empty?
     dqq.each do |i|
       if !qw.has_key?(i['specialNo'])
-        ii = Thread.new {
+        ii = Thread.new(i) {
           loop do
             n = a(i['specialNo'])
             break if n.nil?
