@@ -19,10 +19,10 @@ task gg: :environment do
     uuu = 'http://123.127.88.167:8888/tradeClient/observe/specialList'
     dq = Nokogiri::HTML(open(uuu, read_timeout: 5), nil, 'utf-8')
     dqq = JSON.parse(dq.text)
-    break if dqq.empty? #['1','2','3']
+    break if dqq.empty?
     dqq.each do |i|
       if !qw.has_key?(i['specialNo'])
-        ii = Thread.new do
+        ii = Thread.new {
           loop do
             n = a(i['specialNo'])
             break if n.nil?
@@ -41,13 +41,15 @@ task gg: :environment do
               end
             end
           end
-        end
+        }
         qw.store(i['specialNo'], ii)
         p qw 
         p qw.has_key?(i['specialNo'])
       else
         if qw[i['specialNo']].stop?
           qw.delete(i['specialNo'])
+          p qw[i['specialNo']].status
+          p qw
         else
           next
         end
