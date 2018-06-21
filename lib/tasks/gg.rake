@@ -21,7 +21,7 @@ task gg: :environment do
     dqq = JSON.parse(dq.text)
     break if dqq.empty? #['1','2','3']
     dqq.each do |i|
-      if !qw.has_key?(i)
+      if !qw.has_key?(i['specialNo'])
         ii = Thread.new do
           loop do
             n = a(i['specialNo'])
@@ -43,6 +43,7 @@ task gg: :environment do
           end
         end
         qw.store(i['specialNo'], ii) 
+        p qw.has_key? i['specialNo']
         p qw
       else
         next
