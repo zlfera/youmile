@@ -8,17 +8,22 @@ task gg: :environment do
       u = uu + dqqq
       d = Nokogiri::HTML(open(u, read_timeout: 5), nil, 'utf-8')
       dd = JSON.parse(d.text)
-      dd['rows']
     rescue
       retry
     end
+    dd['rows']
+    [dd['status'], dd['rows']]
   end
 
   qw = {}
   loop do
-    uuu = 'http://123.127.88.167:8888/tradeClient/observe/specialList'
-    dq = Nokogiri::HTML(open(uuu, read_timeout: 5), nil, 'utf-8')
-    dqq = JSON.parse(dq.text)
+    begin
+      uuu = 'http://123.127.88.167:8888/tradeClient/observe/specialList'
+      dq = Nokogiri::HTML(open(uuu, read_timeout: 5), nil, 'utf-8')
+      dqq = JSON.parse(dq.text)
+    rescue
+      retry
+    end
     break if dqq.empty?
     dqq.each do |i|
       if qw.has_key?(i['specialNo'])
@@ -30,21 +35,25 @@ task gg: :environment do
       else
         ii = Thread.new(i) do |i|
           loop do
-            n = a(i['specialNo'])
-            break if n.nil?
-            n.each do |d|
-              if d['remainSeconds'].to_i < 2
-                if d['requestAlias'].nil? || d['requestAlias'].size <= 12
-                  y = '00'
+            m, n = a(i['specialNo'])
+            break if m == 'no'
+            if m == 'yes'
+              n.each do |d|
+                if d['remainSeconds'].to_i < 2
+                  if d['requestAlias'].nil? || d['requestAlias'].size <= 12
+                    y = '00'
+                  else
+                    y = d['requestAlias'][11] + d['requestAlias'][12]
+                  end
+                  t= '拍卖'
+                  g = Grain.new(market_name: 'guojia', mark_number: d['requestAlias'], year: y, variety: d['varietyName'], grade: d['gradeName'], trade_amount: d['num'], starting_price: d['basePrice'], latest_price: d['currentPrice'], address: d['requestBuyDepotName'], status: d['statusName'], trantype: t)
+                  g.save
                 else
-                  y = d['requestAlias'][11] + d['requestAlias'][12]
+                  next
                 end
-                t= '拍卖'
-                g = Grain.new(market_name: 'guojia', mark_number: d['requestAlias'], year: y, variety: d['varietyName'], grade: d['gradeName'], trade_amount: d['num'], starting_price: d['basePrice'], latest_price: d['currentPrice'], address: d['requestBuyDepotName'], status: d['statusName'], trantype: t)
-                g.save
-              else
-                next
               end
+            else
+              next
             end
           end
         end
