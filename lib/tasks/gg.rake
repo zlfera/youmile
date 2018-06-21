@@ -44,11 +44,11 @@ task gg: :environment do
         }
         qw.store(i['specialNo'], ii)
         p qw 
-        p qw.has_key?(i['specialNo'])
+        p qw[i['specialNo']]
       else
-        if qw[i['specialNo']].stop?
+        if !qw[i['specialNo']].status
+          p qw[i['specialNo']]
           qw.delete(i['specialNo'])
-          p qw[i['specialNo']].status
           p qw
         else
           next
