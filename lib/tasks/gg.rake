@@ -42,7 +42,14 @@ task gg: :environment do
             end
           end
         end
-        qw.store(i['specialNo'], ii) 
+        qw.store(i['specialNo'], ii)
+        qw.each_value do |i|
+          if i.stop?
+            i.join
+          else
+            next
+          end
+        end
         p qw.has_key? i['specialNo']
         p qw
       else
