@@ -5,85 +5,80 @@ task gg: :environment do
   def a(dqqq)
     begin
       uu = 'http://123.127.88.167:8888/tradeClient/observe/requestList?specialNo='
-      #uuu = 'http://123.127.88.167:8888/tradeClient/observe/specialList'
-      #dq = Nokogiri::HTML(open(uuu, read_timeout: 5), nil, 'utf-8')
-      #dqq = JSON.parse(dq.text)
-      #dqq[0].nil? ? dqqq = '' : dqqq = dqq[0]['specialNo']
       u = uu + dqqq
       d = Nokogiri::HTML(open(u, read_timeout: 5), nil, 'utf-8')
       dd = JSON.parse(d.text)
-      ddd = dd['rows']
-      #[ddd, dqq]
+      dd['rows']
     rescue
       retry
     end
   end
-#
-#  qw = {}
-#  loop do
-#    uuu = 'http://123.127.88.167:8888/tradeClient/observe/specialList'
-#    dq = Nokogiri::HTML(open(uuu, read_timeout: 5), nil, 'utf-8')
-#    dqq = JSON.parse(dq.text)
-#    break if dqq.empty?               #['1','2','3']
-#    dqq.each do |i|
-  #     if !qw.has_key(i)
-#         ii << Thread.new {
-#         loop do
-  #         n = a(i['specialNo'])
-  #         break if n.nil?
-  #         n.each do |d|
-#             if d['remainSeconds'].to_i < 2
-#               if d['requestAlias'].length < 15 or d['requestAlias'].nil?
-#                 y = '13'
-#               else
-#                 y = d['requestAlias'][11] + d['requestAlias'][12]
-#               end
-#              t= '拍卖'
-#              g = Grain.new(market_name: 'guojia', mark_number: d['requestAlias'], year: y, variety: d['varietyName'], grade: d['gradeName'], trade_amount: d['num'], starting_price: d['basePrice'], latest_price: d['currentPrice'], address: d['requestBuyDepotName'], status: d['statusName'], trantype: t)
-#              g.save
-#             else
-#               next
-#             end
-#           end
-#         end
-#
-#         }
-  #         qw.store(i,ii)
-  #     else
-  #      next 
-  #     end
-#    end
-#    end
-#  end
-#
+
+  qw = {}
   loop do
-    begin
-      uuu = 'http://123.127.88.167:8888/tradeClient/observe/specialList'
-      dq = Nokogiri::HTML(open(uuu, read_timeout: 5), nil, 'utf-8')
-      dqq = JSON.parse(dq.text)
-      break if dqq.empty?
-      dqq.each do |i|
-        Thread.new {
-          n = a(i['specialNo'])
-          next if n.nil?
-          n.each do |d|
-            if d['remainSeconds'].to_i < 2
-              if d['requestAlias'].length < 15 or d['requestAlias'].nil?
-                y = '00'
+    uuu = 'http://123.127.88.167:8888/tradeClient/observe/specialList'
+    dq = Nokogiri::HTML(open(uuu, read_timeout: 5), nil, 'utf-8')
+    dqq = JSON.parse(dq.text)
+    break if dqq.empty? #['1','2','3']
+    dqq.each do |i|
+      if !qw.has_key?(i)
+        ii = Thread.new do
+          loop do
+            n = a(i['specialNo'])
+            break if n.nil?
+            n.each do |d|
+              if d['remainSeconds'].to_i < 2
+                if d['requestAlias'].nil? or d['requestAlias'] < '15'
+                  y = '00'
+                else
+                  y = d['requestAlias'][11] + d['requestAlias'][12]
+                end
+                t= '拍卖'
+                g = Grain.new(market_name: 'guojia', mark_number: d['requestAlias'], year: y, variety: d['varietyName'], grade: d['gradeName'], trade_amount: d['num'], starting_price: d['basePrice'], latest_price: d['currentPrice'], address: d['requestBuyDepotName'], status: d['statusName'], trantype: t)
+                g.save
               else
-                y = d['requestAlias'][11] + d['requestAlias'][12]
+                next
               end
-              t= '拍卖'
-              g = Grain.new(market_name: 'guojia', mark_number: d['requestAlias'], year: y, variety: d['varietyName'], grade: d['gradeName'], trade_amount: d['num'], starting_price: d['basePrice'], latest_price: d['currentPrice'], address: d['requestBuyDepotName'], status: d['statusName'], trantype: t)
-              g.save
-            else
-              next
             end
           end
-        }
+        end
+        qw.store(i['specialNo'], ii) 
+        p qw
+      else
+        next
       end
-    rescue
-      retry
     end
   end
 end
+#
+#  loop do
+#    begin
+#      uuu = 'http://123.127.88.167:8888/tradeClient/observe/specialList'
+#      dq = Nokogiri::HTML(open(uuu, read_timeout: 5), nil, 'utf-8')
+#      dqq = JSON.parse(dq.text)
+#      break if dqq.empty?
+#      dqq.each do |i|
+#        Thread.new {
+#          n = a(i['specialNo'])
+#          next if n.nil?
+#          n.each do |d|
+#            if d['remainSeconds'].to_i < 2
+#              if d['requestAlias'].length < 15 or d['requestAlias'].nil?
+#                y = '00'
+#              else
+#                y = d['requestAlias'][11] + d['requestAlias'][12]
+#              end
+#              t= '拍卖'
+#              g = Grain.new(market_name: 'guojia', mark_number: d['requestAlias'], year: y, variety: d['varietyName'], grade: d['gradeName'], trade_amount: d['num'], starting_price: d['basePrice'], latest_price: d['currentPrice'], address: d['requestBuyDepotName'], status: d['statusName'], trantype: t)
+#              g.save
+#            else
+#              next
+#            end
+#          end
+#        }
+#      end
+#    rescue
+#      retry
+#    end
+#  end
+#end
