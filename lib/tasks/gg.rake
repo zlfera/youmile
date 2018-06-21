@@ -22,7 +22,7 @@ task gg: :environment do
     break if dqq.empty?
     dqq.each do |i|
       if !qw.has_key?(i['specialNo'])
-        ii = Thread.new(i) {
+        ii = Thread.new(i) do |i|
           loop do
             n = a(i['specialNo'])
             break if n.nil?
@@ -41,12 +41,12 @@ task gg: :environment do
               end
             end
           end
-        }
+        end
         qw.store(i['specialNo'], ii)
-        p qw 
+        p qw
         p qw[i['specialNo']]
       else
-        if qw[i['specialNo']].status == false
+        if !qw[i['specialNo']].alive?
           p qw[i['specialNo']]
           qw.delete(i['specialNo'])
           p qw
