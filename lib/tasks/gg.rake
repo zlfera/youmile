@@ -28,7 +28,7 @@ task gg: :environment do
             break if n.nil?
             n.each do |d|
               if d['remainSeconds'].to_i < 2
-                if d['requestAlias'].nil? or d['requestAlias'] < '15'
+                if d['requestAlias'].nil? || d['requestAlias'].size <= 12
                   y = '00'
                 else
                   y = d['requestAlias'][11] + d['requestAlias'][12]
