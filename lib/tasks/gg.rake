@@ -11,7 +11,6 @@ task gg: :environment do
     rescue
       retry
     end
-    dd['rows']
     [dd['status'], dd['rows']]
   end
 
