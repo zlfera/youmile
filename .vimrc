@@ -21,7 +21,7 @@ set shortmess=atI
 set autoindent
 set t_Co=256
 ""call vundle#begin()
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('~/.vim/plugged')
 """"""
 ""Plugin 'VundleVim/Vundle.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
@@ -30,7 +30,7 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 ""Plugin 'posva/vim-vue'
 ""Plugin 'chemzqm/wxapp.vim'
 Plug 'w0rp/ale'
-let &runtimepath.=',~/.config/nvim/plugged/ale'
+let &runtimepath.=',~/.vim/plugged/ale'
 let g:ale_sign_error = '✗'
 let g:ale_sign_warning = '⚠'
 ""Plugin 'vim-syntastic/syntastic'
@@ -70,23 +70,23 @@ let g:NERDTreeIndicatorMapCustom = {
 ""let g:xptemplate_key = '<Tab>'
 Plug 'mattn/emmet-vim'
 Plug 'hail2u/vim-css3-syntax'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-let g:deoplete#enable_at_startup = 1
+""Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+""let g:deoplete#enable_at_startup = 1
 Plug 'elixir-editors/vim-elixir'
-Plug 'slashmili/alchemist.vim'
+""Plug 'slashmili/alchemist.vim'
 Plug 'mhinz/vim-mix-format'
 let g:mix_format_on_save = 1
 let g:mix_format_silent_errors = 1
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'zchee/deoplete-go', { 'do': 'make'}
-Plug 'SirVer/ultisnips'
+""Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+""Plug 'zchee/deoplete-go', { 'do': 'make'}
+""Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-Plug 'chemzqm/wxapp.vim'
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-Plug 'sheerun/vim-polyglot'
+""Plug 'chemzqm/wxapp.vim'
+""Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+""Plug 'sheerun/vim-polyglot'
 "Plugin 'mxw/vim-jsx'
 """"""
 ""call vundle#end()
