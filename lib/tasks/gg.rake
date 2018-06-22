@@ -27,6 +27,8 @@ task gg: :environment do
     dqq.each do |i|
       if qw.has_key?(i['specialNo'])
         if qw[i['specialNo']].alive?
+          #p qw
+          #p qw[i['specialNo']].alive?
           next
         else
           qw.delete(i['specialNo'])
@@ -38,7 +40,7 @@ task gg: :environment do
             break if m == 'no'
             if m == 'yes'
               n.each do |d|
-                if d['remainSeconds'].to_i < 2
+                if d['remainSeconds'].to_i < 3
                   if d['requestAlias'].size <= 12
                     y = '00'
                   else
@@ -57,6 +59,7 @@ task gg: :environment do
           end
         end
         qw.store(i['specialNo'], ii)
+        #p qw
       end
     end
   end
