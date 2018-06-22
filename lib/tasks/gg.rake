@@ -40,7 +40,7 @@ task gg: :environment do
             break if m == 'no'
             if m == 'yes'
               n.each do |d|
-                if d['remainSeconds'].to_i <= 2 && d['remainSeconds'].to_i > 0
+                if d['remainSeconds'].to_i <= 2
                   if d['requestAlias'].size <= 12
                     y = '00'
                   else
