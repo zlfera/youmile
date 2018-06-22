@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-  export PATH="$PATH:$HOME/y_umbrella:$PREFIX/bin:$HOME/elixir/bin:$HOME/go/bin:/data/data/com.termux/files/usr/bin:/data/data/com.termux/files/usr/bin/applets"
+  export PATH="$PATH:$HOME/.mix:$PREFIX/bin:$HOME/elixir/bin:$HOME/go/bin:/data/data/com.termux/files/usr/bin:/data/data/com.termux/files/usr/bin/applets"
 
 # Path to your oh-my-zsh installation.
   export ZSH=/data/data/com.termux/files/home/.oh-my-zsh
