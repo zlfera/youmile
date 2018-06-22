@@ -10,22 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161121093507) do
+ActiveRecord::Schema.define(version: 2018_06_22_034137) do
 
   create_table "grains", force: :cascade do |t|
-    t.string   "market_name"
-    t.string   "mark_number"
-    t.string   "year"
-    t.string   "variety"
-    t.string   "grade"
-    t.string   "trade_amount"
-    t.string   "starting_price"
-    t.string   "latest_price"
-    t.string   "address"
-    t.string   "status"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.string   "trantype"
+    t.string "market_name"
+    t.string "mark_number"
+    t.string "year"
+    t.string "variety"
+    t.string "grade"
+    t.string "trade_amount"
+    t.string "starting_price"
+    t.string "latest_price"
+    t.string "address"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "trantype"
+    t.index ["mark_number"], name: "index_grains_on_mark_number", unique: true
   end
 
 end

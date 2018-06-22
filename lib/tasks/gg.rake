@@ -40,15 +40,20 @@ task gg: :environment do
             break if m == 'no'
             if m == 'yes'
               n.each do |d|
-                if d['remainSeconds'].to_i < 3
+                if d['remainSeconds'].to_i <= 2 && d['remainSeconds'].to_i > 0
                   if d['requestAlias'].size <= 12
                     y = '00'
                   else
                     y = d['requestAlias'][11] + d['requestAlias'][12]
                   end
                   t= '拍卖'
-                  g = Grain.new(market_name: 'guojia', mark_number: d['requestAlias'], year: y, variety: d['varietyName'], grade: d['gradeName'], trade_amount: d['num'], starting_price: d['basePrice'], latest_price: d['currentPrice'], address: d['requestBuyDepotName'], status: d['statusName'], trantype: t)
-                  g.save
+                  if Grain.where("mark_number = ?", d['requestAlias'].to_s).size == 0
+                    g = Grain.new(market_name: 'guojia', mark_number: d['requestAlias'], year: y, variety: d['varietyName'], grade: d['gradeName'], trade_amount: d['num'], starting_price: d['basePrice'], latest_price: d['currentPrice'], address: d['requestBuyDepotName'], status: d['statusName'], trantype: t)
+                    g.save
+                    p g.save
+                  else
+                    next
+                  end
                 else
                   next
                 end
