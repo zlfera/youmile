@@ -27,8 +27,6 @@ task gg: :environment do
     dqq.each do |i|
       if qw.has_key?(i['specialNo'])
         if qw[i['specialNo']].alive?
-          #p qw
-          #p qw[i['specialNo']].alive?
           next
         else
           qw.delete(i['specialNo'])
@@ -36,11 +34,12 @@ task gg: :environment do
       else
         ii = Thread.new(i) do |i|
           loop do
+            #p i['specialNo']
             m, n = a(i['specialNo'])
             break if m == 'no'
             if m == 'yes'
               n.each do |d|
-                if d['remainSeconds'].to_i <= 2
+                if d['remainSeconds'].to_i <= 3
                   if d['requestAlias'].size <= 12
                     y = '00'
                   else
@@ -50,6 +49,7 @@ task gg: :environment do
                   if Grain.where("mark_number = ?", d['requestAlias'].to_s).size == 0
                     g = Grain.new(market_name: 'guojia', mark_number: d['requestAlias'], year: y, variety: d['varietyName'], grade: d['gradeName'], trade_amount: d['num'], starting_price: d['basePrice'], latest_price: d['currentPrice'], address: d['requestBuyDepotName'], status: d['statusName'], trantype: t)
                     g.save
+                    #p n.size
                   else
                     next
                   end
@@ -63,7 +63,6 @@ task gg: :environment do
           end
         end
         qw.store(i['specialNo'], ii)
-        #p qw
       end
     end
   end
