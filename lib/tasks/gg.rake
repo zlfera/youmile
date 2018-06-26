@@ -36,9 +36,9 @@ task gg: :environment do
       else
         ii = Thread.new(i) do |i|
           loop do
-            p i['specialNo']
+            #p i['specialNo']
             m, n = a(i['specialNo'])
-            break if m == 'no'
+            break if m == 'no' || m == 'end'
             if m == 'yes'
               n.each do |d|
                 if d['remainSeconds'].to_i <= 3
