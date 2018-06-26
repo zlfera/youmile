@@ -36,7 +36,7 @@ task gg: :environment do
       else
         ii = Thread.new(i) do |i|
           loop do
-            #p i['specialNo']
+            p i['specialNo']
             m, n = a(i['specialNo'])
             break if m == 'no'
             if m == 'yes'
@@ -48,13 +48,13 @@ task gg: :environment do
                     y = d['requestAlias'][11] + d['requestAlias'][12]
                   end
                   t= '拍卖'
-                  if Grain.where("mark_number = ?", d['requestAlias'].to_s).size == 0
+                  #if Grain.where("mark_number = ?", d['requestAlias'].to_s).size == 0
                     g = Grain.new(market_name: 'guojia', mark_number: d['requestAlias'], year: y, variety: d['varietyName'], grade: d['gradeName'], trade_amount: d['num'], starting_price: d['basePrice'], latest_price: d['currentPrice'], address: d['requestBuyDepotName'], status: d['statusName'], trantype: t)
                     g.save
                     #p n.size
-                  else
-                    next
-                  end
+                  #else
+                  #  next
+                  #end
                 else
                   next
                 end
