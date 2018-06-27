@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
 task gg: :environment do
-  #require 'open-uri'
+  require 'open-uri'
   def a(dqqq)
     begin
       uu = 'http://123.127.88.167:8888/tradeClient/observe/requestList?specialNo='
       u = uu + dqqq
-      #d = Nokogiri::HTML(open(u, read_timeout: 5), nil, 'utf-8')
-      d = HTTP.get(u).to_s
-      dd = JSON.parse(d)
+      d = Nokogiri::HTML(open(u, read_timeout: 5), nil, 'utf-8')
+      #d = HTTP.get(u).to_s
+      dd = JSON.parse(d.text)
     rescue
       retry
     end
@@ -19,9 +19,9 @@ task gg: :environment do
   loop do
     begin
       uuu = 'http://123.127.88.167:8888/tradeClient/observe/specialList'
-      dq = HTTP.get(uuu).to_s
-      #dq = Nokogiri::HTML(open(uuu, read_timeout: 5), nil, 'utf-8')
-      dqq = JSON.parse(dq)
+      #dq = HTTP.get(uuu).to_s
+      dq = Nokogiri::HTML(open(uuu, read_timeout: 5), nil, 'utf-8')
+      dqq = JSON.parse(dq.text)
     rescue
       retry
     end
