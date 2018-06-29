@@ -14,8 +14,9 @@ task gg: :environment do
     end
     [dd['status'], dd['rows']]
   end
-
+ #ai = []
   qw = {}
+  begin
   loop do
     begin
       uuu = 'http://123.127.88.167:8888/tradeClient/observe/specialList'
@@ -51,6 +52,8 @@ task gg: :environment do
                   #if Grain.where("mark_number = ?", d['requestAlias'].to_s).size == 0
                     g = Grain.new(market_name: 'guojia', mark_number: d['requestAlias'], year: y, variety: d['varietyName'], grade: d['gradeName'], trade_amount: d['num'], starting_price: d['basePrice'], latest_price: d['currentPrice'], address: d['requestBuyDepotName'], status: d['statusName'], trantype: t)
                     g.save
+                  #ai.append g
+                  #p ai
                     #p n.size
                   #else
                   #  next
@@ -68,36 +71,7 @@ task gg: :environment do
       end
     end
   end
+  rescue
+    retry
+  end
 end
-#
-#  loop do
-#    begin
-#      uuu = 'http://123.127.88.167:8888/tradeClient/observe/specialList'
-#      dq = Nokogiri::HTML(open(uuu, read_timeout: 5), nil, 'utf-8')
-#      dqq = JSON.parse(dq.text)
-#      break if dqq.empty?
-#      dqq.each do |i|
-#        Thread.new {
-#          n = a(i['specialNo'])
-#          next if n.nil?
-#          n.each do |d|
-#            if d['remainSeconds'].to_i < 2
-#              if d['requestAlias'].length < 15 or d['requestAlias'].nil?
-#                y = '00'
-#              else
-#                y = d['requestAlias'][11] + d['requestAlias'][12]
-#              end
-#              t= '拍卖'
-#              g = Grain.new(market_name: 'guojia', mark_number: d['requestAlias'], year: y, variety: d['varietyName'], grade: d['gradeName'], trade_amount: d['num'], starting_price: d['basePrice'], latest_price: d['currentPrice'], address: d['requestBuyDepotName'], status: d['statusName'], trantype: t)
-#              g.save
-#            else
-#              next
-#            end
-#          end
-#        }
-#      end
-#    rescue
-#      retry
-#    end
-#  end
-#end

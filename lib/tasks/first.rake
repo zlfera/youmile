@@ -19,9 +19,9 @@ task first: :environment do
     next if docs21 == 'null'
     doc21 = JSON.parse(docs21)
     v2 = doc21[0]
-    #x = doc21[2].to_i
-    #pp doc21
-    (1..50).each do |ii|
+    x = doc21[3].to_i
+    pp x
+    (1..x).each do |ii|
       url31 = url3 + v2 + '-' + ii.to_s
       #pp url31
       #docs31 = Nokogiri::HTML(open(url31, read_timeout: 5), nil, 'utf-8').text
