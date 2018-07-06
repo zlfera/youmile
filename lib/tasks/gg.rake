@@ -28,7 +28,7 @@ task gg: :environment do
     end
     break if dqq.empty?
     dqq.each do |i|
-      next until i['specialName'].include?('稻谷')
+      next unless i['specialName'].include?('稻谷')
       if qw.has_key?(i['specialNo'])
         if qw[i['specialNo']].alive?
           next
