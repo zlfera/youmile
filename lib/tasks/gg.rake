@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-
+begin
 task gg: :environment do
   require 'open-uri'
   def a(dqqq)
@@ -14,18 +14,13 @@ task gg: :environment do
     end
     [dd['status'], dd['rows']]
   end
- #ai = []
   qw = {}
   begin
   loop do
-    begin
-      uuu = 'http://123.127.88.167:8888/tradeClient/observe/specialList'
-      #dq = HTTP.get(uuu).to_s
-      dq = Nokogiri::HTML(open(uuu, read_timeout: 2), nil, 'utf-8')
-      dqq = JSON.parse(dq.text)
-    rescue
-      retry
-    end
+    uuu = 'http://123.127.88.167:8888/tradeClient/observe/specialList'
+    #dq = HTTP.get(uuu).to_s
+    dq = Nokogiri::HTML(open(uuu, read_timeout: 2), nil, 'utf-8')
+    dqq = JSON.parse(dq.text)
     break if dqq.empty?
     dqq.each do |i|
       next unless i['specialName'].include?('稻谷') || i['specialName'].include?('粮油') || i['specialName'].include?('粮')
@@ -38,7 +33,6 @@ task gg: :environment do
       else
         ii = Thread.new(i) do |i|
           loop do
-            #p i['specialNo']
             m, n = a(i['specialNo'])
             break if m == 'no' || m == 'end'
             if m == 'yes'
@@ -50,15 +44,8 @@ task gg: :environment do
                     y = d['requestAlias'][11] + d['requestAlias'][12]
                   end
                   t= '拍卖'
-                  #if Grain.where("mark_number = ?", d['requestAlias'].to_s).size == 0
                     g = Grain.new(market_name: 'guojia', mark_number: d['requestAlias'], year: y, variety: d['varietyName'], grade: d['gradeName'], trade_amount: d['num'], starting_price: d['basePrice'], latest_price: d['currentPrice'], address: d['requestBuyDepotName'], status: d['statusName'], trantype: t)
                     g.save
-                  #ai.append g
-                  #p ai
-                    #p n.size
-                  #else
-                  #  next
-                  #end
                 else
                   next
                 end
@@ -75,4 +62,7 @@ task gg: :environment do
   rescue
     retry
   end
+end
+rescue
+  retry
 end
