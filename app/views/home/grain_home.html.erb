@@ -29,7 +29,7 @@
       <% (0..(@redis.size - 1)).each do |i| %>
         <tr>
           <td><%= @redis[i]['created_at'].to_time.strftime('%Y-%m-%d') %></td>
-          <td><%= @redis[i]['address'] %></td>
+          <td><%= @redis[i]['address'] + "(#{@redis[i]['mark_number']})" %></td>
           <td><%= @redis[i]['trantype'] %></td>
           <td><%= @redis[i]['variety'] %></td>
           <td><%= @redis[i]['grade'] %></td>
