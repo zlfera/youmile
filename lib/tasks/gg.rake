@@ -43,6 +43,14 @@ task gg: :environment do
                     y = '00'
                   else
                     y = d['requestAlias'][11] + d['requestAlias'][12]
+                    a = Time.now.year.to_s
+                    a = a[2] + a[3]
+                    a = a.to_i
+                    if y.to_i > a
+                      y = '00'
+                    else
+                      y
+                    end
                   end
                   t= '拍卖'
                     g = Grain.new(market_name: 'guojia', mark_number: d['requestAlias'], year: y, variety: d['varietyName'], grade: d['gradeName'], trade_amount: d['num'], starting_price: d['basePrice'], latest_price: d['currentPrice'], address: d['requestBuyDepotName'], status: d['statusName'], trantype: t)
