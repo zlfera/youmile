@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 task second: :environment do
-  if Grain.all.size > 9500
-    Grain.first(200).each do |i|
+  if Grain.all.size > 9900
+    Grain.first(100).each do |i|
       i.delete
     end
   end
