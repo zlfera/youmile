@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  post 'home/grain_home'
   get 'home/grain_home'
   get 'home/grain_index'
 
