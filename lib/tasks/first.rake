@@ -20,7 +20,6 @@ task first: :environment do
     doc21 = JSON.parse(docs21)
     v2 = doc21[0]
     x = doc21[3].to_i
-    pp x
     (1..x).each do |ii|
       url31 = url3 + v2 + '-' + ii.to_s
       #pp url31
