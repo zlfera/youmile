@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-
+begin
 task first: :environment do
   #require 'open-uri'
   url1 = 'http://220.248.203.59:8686/rtp/data/race/getAllRaceMarketing.jsp'
@@ -38,4 +38,7 @@ task first: :environment do
       end
     end
   end
+end
+rescue
+  retry
 end
