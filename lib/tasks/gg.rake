@@ -36,7 +36,7 @@ task gg: :environment do
             m, n = a(i['specialNo'])
             break if m == 'no' || m == 'end'
             if m == 'yes'
-              next if n[0]['varietyName'].include?('玉米') || n[0]['varietyName'].include?('大豆') || n[0]['varietyName'].include?('小麦') || n[0]['varietyName'].include?('菜籽油') || n[0]['varietyName'].include?('粳稻')
+              next if n[0]['varietyName'].include?('玉米') || n[0]['varietyName'].include?('大豆') || n[0]['varietyName'].include?('小麦') || n[0]['varietyName'].include?('菜籽油') || n[0]['varietyName'].include?('粳稻') || n[0]['varietyName'].include?('豆油')
               n.each do |d|
                 if d['remainSeconds'].to_i <= 3
                   if d['requestAlias'].size <= 12
