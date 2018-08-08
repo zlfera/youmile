@@ -18,7 +18,7 @@ class HomeController < ApplicationController
   def grain_home
     #where("variety ='中晚籼稻' or variety = '早籼稻'")
     @variety = params[:variety]
-    if @variety == nil
+    if @variety == nil || @variety == '品种'
       @redis = Grain.where("latest_price != '0'").where("latest_price != '拍卖'").order(created_at: :desc)
     else
       @redis = Grain.where("variety = '#{@variety}'").where("latest_price != '0'").where("latest_price != '拍卖'").order(created_at: :desc)
