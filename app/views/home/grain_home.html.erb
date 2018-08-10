@@ -15,7 +15,7 @@
         <td>
       <!--  <form action="/home/grain_home/" method="get" accept-charset="utf-8" id="myform">
         -->
-        <%= form_tag({controller: "home", action: "grain_home"}, method: "get", id: "myform") do %>
+        <%= form_tag({controller: "home", action: "grain_home"}, method: "post", id: "myform") do %>
           <select onchange="submitForm()" name="variety">
             <option value="品种">品种</option>
             <option value ="中晚籼稻">中晚籼稻</option>
