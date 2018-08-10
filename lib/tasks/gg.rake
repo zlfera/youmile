@@ -40,7 +40,7 @@ task gg: :environment do
               n.each do |d|
                 if d['remainSeconds'].to_i <= 3
                   if d['requestAlias'].size <= 12
-                    y = '00'
+                    y = d['requestAlias'].to_i.to_s
                   else
                     y = d['requestAlias'][11] + d['requestAlias'][12]
                     a = Time.now.year.to_s
