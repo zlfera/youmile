@@ -38,19 +38,20 @@ task gg: :environment do
             if m == 'yes'
               next if n[0]['varietyName'].include?('玉米') || n[0]['varietyName'].include?('大豆') || n[0]['varietyName'].include?('小麦') || n[0]['varietyName'].include?('菜籽油') || n[0]['varietyName'].include?('粳稻') || n[0]['varietyName'].include?('豆油')
               n.each do |d|
+                x = d['requestAlias']
                 if d['remainSeconds'].to_i <= 3
-                  if d['requestAlias'].size <= 12
-                    y = d['requestAlias'].to_i.to_s
+                  if x.size <= 12 || x.size == 13
+                    y = x.to_i.to_s
                   else
-                    y = d['requestAlias'][11] + d['requestAlias'][12]
-                    a = Time.now.year.to_s
-                    a = a[2] + a[3]
-                    a = a.to_i
-                    if y.to_i > a
-                      y = '00'
-                    else
+                    y = x[11] + x[12]
+                    #a = Time.now.year.to_s
+                    #a = a[2] + a[3]
+                    #a = a.to_i
+                    #if y.to_i > a
+                    # y = '00'
+                    #else
                       y
-                    end
+                    #end
                   end
                   t= '拍卖'
                     g = Grain.new(market_name: 'guojia', mark_number: d['requestAlias'], year: y, variety: d['varietyName'], grade: d['gradeName'], trade_amount: d['num'], starting_price: d['basePrice'], latest_price: d['currentPrice'], address: d['requestBuyDepotName'], status: d['statusName'], trantype: t)
