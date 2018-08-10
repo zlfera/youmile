@@ -41,7 +41,12 @@ task gg: :environment do
                 x = d['requestAlias']
                 if d['remainSeconds'].to_i <= 3
                   if x.size <= 12 || x.size == 13
-                    y = x.to_i.to_s
+                    y = x.to_i
+                    if y == 0
+                      y = '00'
+                    else
+                      y = y.to_s
+                    end
                   else
                     y = x[11] + x[12]
                     #a = Time.now.year.to_s
