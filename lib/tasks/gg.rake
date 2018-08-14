@@ -1,7 +1,8 @@
 # frozen_string_literal: true
+require 'open-uri'
 begin
 task gg: :environment do
-  require 'open-uri'
+  #require 'open-uri'
   def a(dqqq)
     begin
       uu = 'http://123.127.88.167:8888/tradeClient/observe/requestList?specialNo='
