@@ -47,6 +47,7 @@ task gg: :environment do
                       y = '00'
                     else
                       y = y.to_s
+                      y = y[-2] + y[-1]
                     end
                   else
                     y = x[11] + x[12]
