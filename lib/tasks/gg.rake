@@ -57,7 +57,7 @@ task gg: :environment do
                     #if y.to_i > a
                     # y = '00'
                     #else
-                      y
+                    #  y
                     #end
                   end
                   t= '拍卖'
