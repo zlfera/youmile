@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'home/grain_home'
-  post 'home/grain_home'
+  #post 'home/grain_home'
   get 'home/grain_index'
 
   root 'home#index'

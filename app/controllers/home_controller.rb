@@ -17,11 +17,13 @@ class HomeController < ApplicationController
 
   def grain_home
     #where("variety ='中晚籼稻' or variety = '早籼稻'")
-    @variety = params[:variety]
-    if @variety == nil
+    # @variety = params[:variety]
+    td_data = params[:td_data]
+    if td_data == nil
       @redis = Grain.where("latest_price != '0'").where("latest_price != '拍卖'").order(created_at: :desc)
     else
-      @redis = Grain.where("variety = '#{@variety}'").where("latest_price != '0'").where("latest_price != '拍卖'").order(created_at: :desc)
+      x, y = td_data.split(',')
+      @redis = Grain.where("#{y} = '#{x}'").where("latest_price != '0'").where("latest_price != '拍卖'").order(created_at: :desc)
     end
     #@redis = Redis.new(url: Rails.application.secrets.redis_url)
     #@redis.set('redis', g)

@@ -1,11 +1,13 @@
 <script charset="utf-8">
-  function submitForm(){
-    var form = document.getElementById("myform");
-    form.submit();
-}
+  function submitForm(t, tt='zeng'){
+    let form = document.getElementById("myform")
+    document.getElementById("td_data").value = [t.innerHTML, tt]
+    form.submit()
+} 
 </script>
 <div>
-  <h1><%= @variety %>历史交易记录</h1>
+  <h1>稻谷历史交易记录</h1>
+  <%= form_tag({controller: "home", action: "grain_home"}, method: "get", id: "myform") do %>
   <table class='table table-bordered table-striped'>
     <thead>
       <tr>
@@ -13,10 +15,9 @@
         <td>交货地址</td>
         <td>类型</td>
         <td>
-      <!--  <form action="/home/grain_home/" method="get" accept-charset="utf-8" id="myform">
-        -->
-        <%= form_tag({controller: "home", action: "grain_home"}, method: "post", id: "myform") do %>
-          <select onchange="submitForm()" name="variety">
+          品种
+          <!--
+          <select>
             <option value="品种">品种</option>
             <option value ="中晚籼稻">中晚籼稻</option>
             <option value="晚籼稻">晚籼稻</option>
@@ -26,8 +27,7 @@
             <option value="大豆">大豆</option>
             <option value="混合麦">混合麦</option>
           </select>
-        <% end %>
-        <!-- </form> -->
+          <!-- </form> -->
         </td>
         <td>等级</td>
         <td>年份</td>
@@ -41,11 +41,11 @@
       <% (0..(@redis.size - 1)).each do |i| %>
         <tr>
           <td><%= @redis[i]['created_at'].to_time.strftime('%Y-%m-%d') %></td>
-          <td><%= @redis[i]['address'] + "(#{@redis[i]['mark_number']})" %></td>
+          <td onclick=submitForm(this,"address")><%= @redis[i]['address'] %></td>
           <td><%= @redis[i]['trantype'] %></td>
-          <td><%= @redis[i]['variety'] %></td>
+          <td onclick=submitForm(this,"variety")><%= @redis[i]['variety'] %></td>
           <td><%= @redis[i]['grade'] %></td>
-          <td><%= @redis[i]['year'] %></td>
+          <td onclick=submitForm(this,"year")><%= @redis[i]['year'] %></td>
           <td><%= @redis[i]['trade_amount'] %></td>
           <td><%= @redis[i]['starting_price'] %></td>
           <td><%= @redis[i]['latest_price'] %></td>
@@ -53,5 +53,6 @@
       <% end %>
     </tbody>
   </table>
+  <input type="hidden" name="td_data" id="td_data" value="" />
+  <% end %>
 </div>
-
