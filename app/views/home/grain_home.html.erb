@@ -41,7 +41,7 @@
       <% (0..(@redis.size - 1)).each do |i| %>
         <tr>
           <td><%= @redis[i]['created_at'].to_time.strftime('%Y-%m-%d') %></td>
-          <td onclick=submitForm(this,"address")><%= @redis[i]['address'] %></td>
+          <td onclick=submitForm(this,"address")><%= @redis[i]['address'] + "(#{@redis[i]['mark_number']})" %></td>
           <td><%= @redis[i]['trantype'] %></td>
           <td onclick=submitForm(this,"variety")><%= @redis[i]['variety'] %></td>
           <td><%= @redis[i]['grade'] %></td>
