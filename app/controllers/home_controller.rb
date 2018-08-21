@@ -20,10 +20,10 @@ class HomeController < ApplicationController
     # @variety = params[:variety]
     td_data = params[:td_data]
     if td_data == nil
-      @redis = Grain.where("latest_price != '0'").where("latest_price != '拍卖'").order(created_at: :desc)
+      @redis = Grain.where("latest_price != '0'").order(created_at: :desc)
     else
       x, y = td_data.split(',')
-      if y == 'latest_price' || 'starting_price'
+      if y == 'latest_price' || y == 'starting_price'
         a=Grain.where("#{y} != '0'").order(created_at: :desc).minimum(y)
         @redis = Grain.where("#{y} = '#{a}'")
         #@redis = Grain.where("#{y} <= '#{x}'").where("latest_price != '0'").where("latest_price != '拍卖'").order(created_at: :desc)
@@ -31,7 +31,7 @@ class HomeController < ApplicationController
         if y == 'address'
           x, _ = x.split('(')
         end
-        @redis = Grain.where("#{y} = '#{x}'").where("latest_price != '0'").where("latest_price != '拍卖'").order(created_at: :desc)
+        @redis = Grain.where("#{y} = '#{x}'").where("latest_price != '0'").order(created_at: :desc)
       end
     end
     #@redis = Redis.new(url: Rails.application.secrets.redis_url)
