@@ -23,10 +23,14 @@ class HomeController < ApplicationController
       @redis = Grain.where("latest_price != '0'").where("latest_price != '拍卖'").order(created_at: :desc)
     else
       x, y = td_data.split(',')
-      if y == 'address'
-        x, _ = x.split('(')
-      end
+      if y == 'latest_price'
+        @redis = Grain.where("#{y} <= '#{x}'").where("latest_price != '0'").where("latest_price != '拍卖'").order(created_at: :desc)
+      else
+        if y == 'address'
+          x, _ = x.split('(')
+        end
         @redis = Grain.where("#{y} = '#{x}'").where("latest_price != '0'").where("latest_price != '拍卖'").order(created_at: :desc)
+      end
     end
     #@redis = Redis.new(url: Rails.application.secrets.redis_url)
     #@redis.set('redis', g)
