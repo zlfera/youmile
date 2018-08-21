@@ -48,7 +48,7 @@
           <td onclick=submitForm(this,"year")><%= @redis[i]['year'] %></td>
           <td><%= @redis[i]['trade_amount'] %></td>
           <td><%= @redis[i]['starting_price'] %></td>
-          <td><%= @redis[i]['latest_price'] %></td>
+          <td onclick=submitForm(this, "latest_price")><%= @redis[i]['latest_price'] %></td>
         </tr>
       <% end %>
     </tbody>
