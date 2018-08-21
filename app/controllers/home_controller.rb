@@ -23,9 +23,9 @@ class HomeController < ApplicationController
       @redis = Grain.where("latest_price != '0'").where("latest_price != '拍卖'").order(created_at: :desc)
     else
       x, y = td_data.split(',')
-      if y == 'latest_price'
-        a=Grain.where("latest_price != '0'").where("latest_price != '拍卖'").order(created_at: :desc).minimum('latest_price')
-        @redis = Grain.where("latest_price = '#{a}'")
+      if y == 'latest_price' || 'starting_price'
+        a=Grain.where("#{y} != '0'").order(created_at: :desc).minimum(y)
+        @redis = Grain.where("#{y} = '#{a}'")
         #@redis = Grain.where("#{y} <= '#{x}'").where("latest_price != '0'").where("latest_price != '拍卖'").order(created_at: :desc)
       else
         if y == 'address'
