@@ -7,7 +7,7 @@ task first: :environment do
   url3 = 'http://220.248.203.59:8686/rtp/data/race/getRaceTacheDetail.jsp?id='
   #docs = Nokogiri::HTML(open(url1, read_timeout: 5), nil, 'utf-8').text
   docs = HTTP.get(url1).to_s
-  return if docs == 'null'
+  return "over" if docs == 'null'
   doc = JSON.parse(docs)
   #pp doc
   doc.each do |i|
