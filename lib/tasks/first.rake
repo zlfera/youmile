@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 begin
 task first: :environment do
-  #require 'open-uri'
+  require 'open-uri'
   url1 = 'http://220.248.203.59:8686/rtp/data/race/getAllRaceMarketing.jsp'
   url2 = 'http://220.248.203.59:8686/rtp/data/race/getRaceMeeting.jsp?id='
   url3 = 'http://220.248.203.59:8686/rtp/data/race/getRaceTacheDetail.jsp?id='
-  #docs = Nokogiri::HTML(open(url1, read_timeout: 5), nil, 'utf-8').text
-  docs = HTTP.get(url1).to_s
+  docs = Nokogiri::HTML(open(url1, read_timeout: 5), nil, 'utf-8').text
+  #docs = HTTP.get(url1).to_s
   return "over" if docs == 'null'
   doc = JSON.parse(docs)
   #pp doc
@@ -14,8 +14,8 @@ task first: :environment do
     v1 = i[0]
     market_name = i[1]
     url21 = "#{url2}#{v1.to_i}"
-    #docs21 = Nokogiri::HTML(open(url21, read_timeout: 5), nil, 'utf-8').text
-    docs21 = HTTP.get(url21).to_s
+    docs21 = Nokogiri::HTML(open(url21, read_timeout: 5), nil, 'utf-8').text
+    #docs21 = HTTP.get(url21).to_s
     next if docs21 == 'null'
     doc21 = JSON.parse(docs21)
     v2 = doc21[0]
@@ -23,8 +23,8 @@ task first: :environment do
     (1..x).each do |ii|
       url31 = url3 + v2 + '-' + ii.to_s
       #pp url31
-      #docs31 = Nokogiri::HTML(open(url31, read_timeout: 5), nil, 'utf-8').text
-      docs31 = HTTP.get(url31).to_s
+      docs31 = Nokogiri::HTML(open(url31, read_timeout: 5), nil, 'utf-8').text
+      #docs31 = HTTP.get(url31).to_s
       next if docs31 == 'null'
       doc31 = JSON.parse(docs31)
       #pp doc31
