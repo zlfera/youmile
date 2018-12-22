@@ -16,7 +16,7 @@ end
 group :production do
   gem 'pg'
   gem 'sassc'
-  gem 'bootstrap-sass'
+  gem 'bootstrap'
  # gem 'scout_apm'
   #gem 'tunemygc'
  # gem 'rails_autoscale_agent'

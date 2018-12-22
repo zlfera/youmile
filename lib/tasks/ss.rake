@@ -4,6 +4,10 @@ require "mechanize"
 task :ss do
   agent = Mechanize.new
   agent.get("https://youmilegg.herokuapp.com/home/grain_home")
+  agent.get("https://youmilegg.herokuapp.com/")
+  agent.get("https://youmile.herokuapp.com/home/grain_home")
+  agent.get("https://youmile.herokuapp.com/")
+  agent.get("https://grain.gigalixirapp.com")
   #agent.user_agent = "Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko"
   #login_page = agent.get "https://www.msjsq.com/login.php"
   #login_form = login_page.forms[0]
