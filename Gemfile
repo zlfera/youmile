@@ -8,7 +8,7 @@ gem 'http'
 #gem 'whenever', require: false
 gem 'pry-rails', group: :development
 
-gem 'bootstrap-sass'
+#gem 'bootstrap-sass'
 # Use sqlite3 as the database for Active Record
 group :development, :test do
   gem 'sqlite3'
@@ -16,6 +16,7 @@ end
 group :production do
   gem 'pg'
   gem 'sassc'
+  gem 'bootstrap-sass'
  # gem 'scout_apm'
   #gem 'tunemygc'
  # gem 'rails_autoscale_agent'
