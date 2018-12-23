@@ -22,7 +22,7 @@ end
 # Use Puma as the app server
 gem 'puma'#, '~> 3.0'
 # Use SCSS for stylesheets
-gem 'sass-rails', group: :development
+gem 'sass-rails'#, group: :development
 #gem 'sassc'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier'#, '>= 1.3.0'
