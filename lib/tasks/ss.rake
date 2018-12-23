@@ -3,6 +3,7 @@
 require "mechanize"
 task :ss do
   agent = Mechanize.new
+  agent.user_agent = "Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko"
   agent.get("https://youmilegg.herokuapp.com/home/grain_home")
   agent.get("https://youmilegg.herokuapp.com/")
   agent.get("https://youmile.herokuapp.com/home/grain_home")
