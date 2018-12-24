@@ -38,7 +38,7 @@ class HomeController < ApplicationController
       else
         a = Grain.order(created_at: :desc).all
         @redis = a.reject do |i|
-          i['address'].include(search) == false
+          i['address'].include?(search) == false
         end
       end
     end
