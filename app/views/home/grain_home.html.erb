@@ -10,12 +10,9 @@
   <%= form_tag({controller: "home", action: "grain_home"}, method: "get", id: "myform") do %>
   <div>
     <label for="">查询已交易粮库（例如“九江”）</label>
-    </div>
-  <div>
     <input type="text" value="" name="search"/>
     <input type="submit" value="搜索"/>
   </div>
-  <div>
   <table class='table table-bordered table-striped'>
     <thead>
       <tr>
@@ -62,6 +59,5 @@
     </tbody>
   </table>
   <input type="hidden" name="td_data" id="td_data" value="" />
-    </div>
   <% end %>
 </div>
