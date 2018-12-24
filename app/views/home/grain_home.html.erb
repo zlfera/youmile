@@ -8,12 +8,12 @@
 <div>
   <h1>稻谷历史交易记录</h1>
   <%= form_tag({controller: "home", action: "grain_home"}, method: "get", id: "myform") do %>
-  <h4>
+  <table class='table table-bordered table-striped'>
+  <div>
     <label for="">查询已交易粮库（例如“九江”）</label>
     <input type="text" value="" name="search"/>
     <input type="submit" value="搜索" />
-  </h4>
-  <table class='table table-bordered table-striped'>
+  </div>
     <thead>
       <tr>
         <td>交易时间</td>
