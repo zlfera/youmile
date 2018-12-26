@@ -1,5 +1,5 @@
 source 'https://rubygems.org'#'https://gems.ruby-china.org'
-ruby '2.6'
+ruby '2.6.0'
 gem 'mechanize'
 gem 'rails'
 gem 'http'
