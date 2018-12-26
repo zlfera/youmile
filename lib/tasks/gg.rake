@@ -23,7 +23,7 @@ task gg: :environment do
     dqq = JSON.parse(dq.text)
     break if dqq.empty?
     dqq.each do |i|
-      next unless i['specialName'].include?('稻谷') || i['specialName'].include?('粮油') || i['specialName'].include?('粮')
+      #next unless i['specialName'].include?('稻谷') || i['specialName'].include?('粮油') || i['specialName'].include?('粮')
       if qw.has_key?(i['specialNo'])
         if qw[i['specialNo']].alive?
           next
@@ -36,7 +36,7 @@ task gg: :environment do
             m, n = a(i['specialNo'])
             break if m == 'no' || m == 'end'
             if m == 'yes'
-              next if n[0]['varietyName'].include?('玉米') || n[0]['varietyName'].include?('大豆') || n[0]['varietyName'].include?('小麦') || n[0]['varietyName'].include?('菜籽油') || n[0]['varietyName'].include?('粳稻') || n[0]['varietyName'].include?('豆油')
+              next if n[0]['varietyName'].include?('玉米') || n[0]['varietyName'].include?('豆') || n[0]['varietyName'].include?('麦') || n[0]['varietyName'].include?('油') || n[0]['varietyName'].include?('粳稻')
               n.each do |d|
                 x = d['requestAlias']
                 if d['remainSeconds'].to_i <= 3
