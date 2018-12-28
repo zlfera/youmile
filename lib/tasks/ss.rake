@@ -10,6 +10,7 @@ task :ss do
   agent.get("https://youmile.herokuapp.com/")
   agent.get("https://grain.gigalixirapp.com")
   agent.get("https://grain.gigalixirapp.com/grains")
+  agent.get("https://zz.gigalixirapp.com")
   #agent.user_agent = "Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko"
   #login_page = agent.get "https://www.msjsq.com/login.php"
   #login_form = login_page.forms[0]
