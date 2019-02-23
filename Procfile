@@ -1,2 +1,2 @@
-web: RUBYOPT=--jit rails server -p $PORT
+web: RUBYOPT=--jit rails server
 worker: bundle exec sidekiq
